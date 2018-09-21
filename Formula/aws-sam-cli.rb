@@ -1,7 +1,7 @@
 class AwsSamCli < Formula
   include Language::Python::Virtualenv
 
-  desc "AWS SAM command line interface"
+  desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications"
   homepage "https://github.com/awslabs/aws-sam-cli/"
   url "https://github.com/awslabs/aws-sam-cli/archive/v0.6.0.tar.gz"
   sha256 "f85762aba829525eb8c6a52d354ef7254ed37e5bc8a7389885fd0daebfea1c96"
