@@ -13,6 +13,7 @@ brew install FORMULA
 ## Formulae
 
 * [aws-sam-cli](Formula/aws-sam-cli.rb)
+* [cfn-lint](Formula/cfn-lint.rb)
 
 ## Documentation
 
