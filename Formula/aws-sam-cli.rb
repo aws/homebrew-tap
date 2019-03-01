@@ -3,8 +3,8 @@ class AwsSamCli < Formula
 
   desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications"
   homepage "https://github.com/awslabs/aws-sam-cli/"
-  url "https://files.pythonhosted.org/packages/d1/17/934d213e62a0c2943eb23a797bc334d7863198d86c5c0e8706dd236c5b67/aws-sam-cli-0.11.0.tar.gz"
-  sha256 "c2b383d4830d0efbdf10c29891ff51aea36bce7a54b5341eb21049fd6ebc6422"
+  url "https://files.pythonhosted.org/packages/be/f2/b72d3ead69405e8e69efa32c550c9814608eb702c9d82c37c81708d22b21/aws-sam-cli-0.12.0.tar.gz"
+  sha256 "4a6331d185ff046f820f662132c69202638ede8c5a15a5944e3410de1cb37c5f"
   head "https://github.com/awslabs/aws-sam-cli.git", :branch => "develop"
   bottle :unneeded
 
