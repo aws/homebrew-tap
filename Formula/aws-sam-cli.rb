@@ -6,7 +6,6 @@ class AwsSamCli < Formula
   url "https://files.pythonhosted.org/packages/92/df/3e8c8a65075d810f8f35157d60c06461061f51c3713c47ca3afaef2c5b89/aws-sam-cli-0.15.0.tar.gz"
   sha256 "cdfdb39c1b0fc8925b8e24719d934c2e676cc675b10532d038c1fb90dd8d3786"
   head "https://github.com/awslabs/aws-sam-cli.git", :branch => "develop"
-  bottle :unneeded
 
   depends_on "python"
 
