@@ -3,7 +3,7 @@ class AwsCfnLint < Formula
 
   desc "AWS cfn-lint is a tool to lint CloudFormation templates locally"
   homepage "https://github.com/aws-cloudformation/cfn-python-lint/"
-  url "https://files.pythonhosted.org/packages/19/eb/2515f1915a7fa14d30dd31217a42faade80553265940d1b8a9be2d59b677/cfn-lint-0.19.1.tar.gz"
+  url "https://files.pythonhosted.org/packages/16/d4/5add615ebca45e4dd4a4f0f716c96f508ac084d3cc573adaa34fb51a2abb/cfn-lint-0.21.3.tar.gz"
   sha256 "5a723ff791fc23aced78e9cde28f18f9eeae9a24f91db2b7a20f7aa837a613b3"
   head "https://github.com/aws-cloudformation/cfn-python-lint.git", :branch => "master"
   bottle :unneeded
