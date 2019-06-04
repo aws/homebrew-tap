@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 class AwsSamCli < Formula
   include Language::Python::Virtualenv
 
   desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications"
   homepage "https://github.com/awslabs/aws-sam-cli/"
-  url "https://files.pythonhosted.org/packages/04/64/cb8efe325fd413f62305ed2c2a029177c6d4784bde532c19b8d62f3959c9/aws-sam-cli-0.16.1.tar.gz"
-  sha256 "2dd68800723c76f52980141ba704e105d77469b6ba465781fbc9120e8121e76c"
+  url "https://files.pythonhosted.org/packages/8b/5c/1a91cbfdba59add3defe82e70b2ebd15790ff05f70a92d757476c42e68d1/aws-sam-cli-0.17.0.tar.gz"
+  sha256 "95be2293373f323975198f7695eb712d687920d1e376918b54df24d9c4ef1580"
   head "https://github.com/awslabs/aws-sam-cli.git", :branch => "develop"
   bottle do
     root_url "https://github.com/awslabs/aws-sam-cli/releases/download/v0.16.1/"
