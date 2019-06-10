@@ -1,0 +1,42 @@
+sudo: false
+
+os: osx
+osx_image: xcode9.2
+compiler:
+  - clang
+script:
+  - brew tap aws/tap
+  - brew install --build-bottle aws-sam-cli
+  - export SAM_CLI_VERSION=$(cat $TRAVIS_BUILD_DIR/Formula/aws-sam-cli.rb | grep -v root_url | grep url | awk -F'/v' '{print $2}' | awk -F '.tar' '{print $1}')
+  - export ROOT_URL=$(echo "https://github.com/aws/homebrew-tap/releases/download/v"$SAM_CLI_VERSION"/")
+  - brew bottle --no-rebuild --json --root-url=$ROOT_URL aws-sam-cli
+  - cd $TRAVIS_BUILD_DIR
+  - export COMMIT_HASH=$(git log -n 1 | head -n 1 | awk -F ' ' '{print $2}')
+  - echo $COMMIT_HASH
+before_deploy:
+  - for bottle in *bottle.tar.gz; do mv "$bottle" "$(echo "$bottle" | sed s/--/-/)"; done
+  - export RELEASE_FILES=$(ls *.bottle.tar.gz)
+  - echo 'Sanity check of bottle'
+  - brew uninstall aws-sam-cli
+  - brew install $RELEASE_FILES
+  - sam --version
+  - echo 'Sanity check passed!'
+  - echo 'Deploying files to S3'
+  - mkdir release_artifacts
+  - ls *.bottle.tar.gz | xargs -I{} cp {} release_artifacts/
+  - 'echo ''Deploying files to S3: ''$RELEASE_FILES'
+  - echo $PWD
+deploy:
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: aws-sam-cli-bottles
+  region: us-west-2
+  acl: bucket_owner_full_control
+  local_dir: $TRAVIS_BUILD_DIR/release_artifacts
+  upload-dir: $SAM_CLI_VERSION/$COMMIT_HASH/bottles
+  skip_cleanup: true
+  on:
+    branch: master
+    repo: aws/homebrew-tap
+
