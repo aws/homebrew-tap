@@ -8,7 +8,7 @@ script:
   - brew tap aws/tap
   - brew install --build-bottle aws-sam-cli
   - export SAM_CLI_VERSION=$(cat $TRAVIS_BUILD_DIR/Formula/aws-sam-cli.rb | grep -v root_url | grep url | awk -F'/v' '{print $2}' | awk -F '.tar' '{print $1}')
-  - export ROOT_URL=$(echo "https://github.com/aws/homebrew-tap/releases/download/v"$SAM_CLI_VERSION"/")
+  - export ROOT_URL=$(echo "https://github.com/awslabs/aws-sam-cli/releases/download/v"$SAM_CLI_VERSION"/")
   - brew bottle --no-rebuild --json --root-url=$ROOT_URL aws-sam-cli
   - cd $TRAVIS_BUILD_DIR
   - export COMMIT_HASH=$(git log -n 1 | head -n 1 | awk -F ' ' '{print $2}')
@@ -30,13 +30,13 @@ deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: aws-sam-cli-bottles
+  bucket: aws-sam-cli-brew-bottles
   region: us-west-2
   acl: bucket_owner_full_control
   local_dir: $TRAVIS_BUILD_DIR/release_artifacts
   upload-dir: $SAM_CLI_VERSION/$COMMIT_HASH/bottles
   skip_cleanup: true
   on:
-    branch: master
+    branch: bottles
     repo: aws/homebrew-tap
 
