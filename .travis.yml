@@ -37,6 +37,6 @@ deploy:
   upload-dir: $SAM_CLI_VERSION/$COMMIT_HASH/bottles
   skip_cleanup: true
   on:
-    branch: bottles
+    branch: master
     repo: aws/homebrew-tap
 
