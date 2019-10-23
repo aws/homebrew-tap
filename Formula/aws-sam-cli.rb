@@ -10,8 +10,8 @@ class AwsSamCli < Formula
   bottle do
     root_url "https://github.com/awslabs/aws-sam-cli/releases/download/v0.22.0/"
     cellar :any_skip_relocation
-    sha256 "8bac2e390ec2deef82a8b9d3982e3263b1d85b4f20e8cdb31ace5e71fcdca5c2" => :sierra
-    sha256 "e9ef89a87587a7c68e57219fe7a62620ff0e42510e7bde517d152ca6c6047971" => :x86_64_linux
+    sha256 "1b8beecfd52d256800a2a75e124e7abbd2de5bedb06d8da5eb6244def0e89817" => :sierra
+    sha256 "f3ddacad90a11aabfad1b12f8cabf19bf83fb8a91c05fe0f802653d6227ee313" => :x86_64_linux
   end
 
   depends_on "python"
