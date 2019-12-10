@@ -1,0 +1,42 @@
+version: 1.0.{build}
+
+branches:
+  # whitelist
+  only:
+    - master
+
+image:
+  - macos-mojave
+  - Ubuntu1804
+
+# scripts that are called at very beginning, before repo cloning
+init:
+  - git config --global core.autocrlf input
+
+# scripts that run after cloning repository
+for:
+  -
+    matrix:
+      only:
+        - image: Ubuntu1804
+
+    before_build:
+      # Following alternate install steps for linuxbrew from here: https://docs.brew.sh/Homebrew-on-Linux#alternative-installation
+      - git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
+      - mkdir ~/.linuxbrew/bin
+      - ln -s ~/.linuxbrew/Homebrew/bin/brew ~/.linuxbrew/bin
+      - eval $(~/.linuxbrew/bin/brew shellenv)
+  -
+    matrix:
+      only:
+        - image: macos-mojave
+
+    before_build:
+      - echo "Mac don't need any before_build steps."
+
+# Building bottles shell script.
+build_script:
+  - ./build-bottles.sh
+
+artifacts:
+  - path: "*.bottle.tar.gz"
