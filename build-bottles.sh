@@ -3,11 +3,10 @@
 # Setting up build environment
 brew tap aws/tap # adding aws tap so that we can install aws-sam-cli.
 brew install rename # Gnu rename to find and replace words in file name.
-brew install jq
 brew uninstall -f aws-sam-cli
 brew install --build-bottle aws-sam-cli
 
-SAM_CLI_VERSION="$(cat bottle-config.json | jq -r '.version')"
+SAM_CLI_VERSION="$(cat Formula/aws-sam-cli.rb| grep -v root_url | grep url | cut -d '-' -f 4 | cut -d '.' -f 1-3)"
 echo "Sam cli version $SAM_CLI_VERSION"
 ROOT_URL=$(echo "https://github.com/awslabs/aws-sam-cli/releases/download/v"$SAM_CLI_VERSION"/")
 echo "Root url $ROOT_URL"
