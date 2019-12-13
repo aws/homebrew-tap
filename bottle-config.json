@@ -1,4 +1,5 @@
 {
+    "version": "0.37.0",
     "url": "https://files.pythonhosted.org/packages/49/9b/b70dda6e499ac7c83538c8bfa4a66d66157b10d70a3a38a2279dd25c227a/aws-sam-cli-0.37.0.tar.gz",
     "sha256": "5d0d37c9102660e75972341b8761109a2d7539b80ca378fcd5cb6aae79a173de",
     "bottle": {
