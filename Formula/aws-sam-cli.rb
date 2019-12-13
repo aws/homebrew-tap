@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require_relative 'config_provider'
+require_relative '../ConfigProvider/config_provider'
 
 class AwsSamCli < Formula
   include Language::Python::Virtualenv
