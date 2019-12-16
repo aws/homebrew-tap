@@ -7,7 +7,8 @@ compiler:
 script:
   - brew tap aws/tap
   - brew install --build-bottle aws-sam-cli
-  - export SAM_CLI_VERSION=$(cat $TRAVIS_BUILD_DIR/Formula/aws-sam-cli.rb | grep -v root_url | grep url | awk -F'/v' '{print $2}' | awk -F '.tar' '{print $1}')
+  - brew install jq
+  - export SAM_CLI_VERSION=$(cat bottle-config.json | jq -r '.version')
   - export ROOT_URL=$(echo "https://github.com/awslabs/aws-sam-cli/releases/download/v"$SAM_CLI_VERSION"/")
   - brew bottle --no-rebuild --json --root-url=$ROOT_URL aws-sam-cli
   - cd $TRAVIS_BUILD_DIR
