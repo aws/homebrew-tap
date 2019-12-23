@@ -21,11 +21,9 @@ for:
         - image: Ubuntu1804
 
     before_build:
-      # Following alternate install steps for linuxbrew from here: https://docs.brew.sh/Homebrew-on-Linux#alternative-installation
-      - git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
-      - mkdir ~/.linuxbrew/bin
-      - ln -s ~/.linuxbrew/Homebrew/bin/brew ~/.linuxbrew/bin
-      - eval $(~/.linuxbrew/bin/brew shellenv)
+      # Installing linuxbrew and putting it in path.
+      - export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+      - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
   -
     matrix:
       only:
