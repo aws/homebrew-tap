@@ -3,10 +3,10 @@
     "url": "https://files.pythonhosted.org/packages/2d/2c/291cc243b7e9de43a752608a8ad77a3c7dfdf0ffc5d3ce466ea28dc761e4/aws-sam-cli-0.41.0.tar.gz",
     "sha256": "6bec9cfd2276ad608ceda244dba021da50f8364388e3be75de35684f3d5c41ec",
     "bottle": {
-        "root_url": "https://github.com/awslabs/aws-sam-cli/releases/download/v0.40.0/",
+        "root_url": "https://github.com/awslabs/aws-sam-cli/releases/download/v0.41.0/",
         "sha256": {
-            "sierra": "4f810b43ac3b0d90f23513512e7c866f21e929e6d5ea1adffddd9f97dc311c18",
-            "linux": "8b7098a04dd0fd5540d4ccdb994d7d87892c9e22bdf49b65b8440faaa3db316c"
+            "sierra": "477e9954ccdf9f3b418220888ea5201eef5862a83026b3a5cbd87707cf7327ef",
+            "linux": "b3657643dc5b6afcad4553e95978cb48dfd77035f9611e154fa4da7a7623c650"
         }
     }
 }
