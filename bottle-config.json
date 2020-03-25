@@ -3,10 +3,10 @@
     "url": "https://api.github.com/repos/awslabs/aws-sam-cli/tarball/v0.46.2",
     "sha256": "9a4f7ae1c5d50ab7c127b54e91b06e4f39c7f9ee29b21b0905f1d2dd635077f0",
     "bottle": {
-        "root_url": "https://github.com/awslabs/aws-sam-cli/releases/download/v0.46.1/",
+        "root_url": "https://github.com/awslabs/aws-sam-cli/releases/download/v0.46.2/",
         "sha256": {
-            "sierra": "51cb900ea9c89cdd257bed569c3d0eb967585944eb345408bc62851f9d566d2f",
-            "linux": "6619d02b8c4e8e2fadb4804295fe4c97522cf02070aa3803d0f0405a5a9bea92"
+            "sierra": "f96e50583fcac86495003707ef34a234cbae277fd3cf661582c5b64e95e6f06c",
+            "linux": "e514bb3733212ca6c403ac9e0bb8812de7cad920b8f19fc2c50c451dd969d435"
         }
     }
 }
