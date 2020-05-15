@@ -37,4 +37,4 @@ build_script:
   - ./build-bottles.sh
 
 artifacts:
-  - path: "*.bottle.tar.gz"
+  - path: "build/*.bottle.tar.gz"

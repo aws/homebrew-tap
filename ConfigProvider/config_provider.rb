@@ -2,14 +2,28 @@ require 'json'
 
 class ConfigProvider
     ##
-    # Creates a ConfigProvider which helps in reading values from bottle-config.json
+    # Creates a ConfigProvider which helps in reading values from the bottle's config file
+    # in the bottle-configs directory.
     # We are moving values to json file so that it is easy to modify them by bot
 
-    CONFIG_FILE = File.join(File.dirname(__FILE__), "..", "bottle-config.json")
+    CONFIG_DIR = File.join(File.dirname(__FILE__), "..", "bottle-configs")
 
-    def initialize(config_file_path=CONFIG_FILE)
-        file = File.read(config_file_path)
+    def initialize(name, config_file_path)
+        if config_file_path
+            file = File.read(config_file_path) 
+        else 
+            file = File.read(File.join(CONFIG_DIR, "#{name.downcase}.json"))
+        end
+
         @config_data = JSON.parse(file)
+    end
+
+    def name
+        @config_data['name']
+    end
+
+    def bin
+        @config_data['bin']
     end
 
     def url
