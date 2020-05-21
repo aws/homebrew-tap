@@ -1,0 +1,14 @@
+{
+    "name": "ec2-instance-selector",
+    "version": "0.8.3",
+    "bin": "ec2-instance-selector",
+    "url": "https://api.github.com/repos/aws/amazon-ec2-instance-selector/tarball/v0.8.3",
+    "sha256": "839f94cae1eb35fd47d74220e7d4f2b63cfd9b78ae775d327b77f8fb750e601d",
+    "bottle": {
+        "root_url": "https://github.com/aws/amazon-ec2-instance-selector/releases/download/v0.8.3/",
+        "sha256": {
+            "sierra": "476c0674c5d45606b59800d81a100a829f7ebf0639770ab8a83acae9fa6d81a7",
+            "linux": "12c5532229ee52370a5269a7e878129afda2551d1d910da1c2171ef9ce1bdcbf"
+        }
+    }
+}

@@ -12,7 +12,10 @@ brew install FORMULA
 
 ## Formulae
 
-* [aws-sam-cli](Formula/aws-sam-cli.rb)
+| Repository | Formula |
+| ---------- | ------- |
+| [aws-sam-cli](https://github.com/awslabs/aws-sam-cli) | [formula](Formula/aws-sam-cli.rb) |
+| [ec2-instance-selector](https://github.com/aws/amazon-ec2-instance-selector) | [formula](Formula/ec2-instance-selector) |
 
 ## Documentation
 

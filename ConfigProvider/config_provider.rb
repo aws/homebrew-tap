@@ -8,8 +8,8 @@ class ConfigProvider
 
     CONFIG_DIR = File.join(File.dirname(__FILE__), "..", "bottle-configs")
 
-    def initialize(name, config_file_path)
-        if config_file_path
+    def initialize(name, config_file_path=nil)
+        unless config_file_path.nil?
             file = File.read(config_file_path) 
         else 
             file = File.read(File.join(CONFIG_DIR, "#{name.downcase}.json"))
@@ -20,6 +20,10 @@ class ConfigProvider
 
     def name
         @config_data['name']
+    end
+
+    def version
+        @config_data['version']
     end
 
     def bin
