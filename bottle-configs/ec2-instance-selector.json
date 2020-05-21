@@ -7,8 +7,8 @@
     "bottle": {
         "root_url": "https://github.com/aws/amazon-ec2-instance-selector/releases/download/v0.8.3/",
         "sha256": {
-            "sierra": "476c0674c5d45606b59800d81a100a829f7ebf0639770ab8a83acae9fa6d81a7",
-            "linux": "12c5532229ee52370a5269a7e878129afda2551d1d910da1c2171ef9ce1bdcbf"
+            "sierra": "",
+            "linux": ""
         }
     }
 }
