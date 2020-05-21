@@ -1,7 +1,7 @@
 {
-    "version": "0.50.0",
-    "url": "https://api.github.com/repos/awslabs/aws-sam-cli/tarball/v0.50.0",
-    "sha256": "0b0984e5eeb678ddd1e80ce2b1690e84ee9e803acc288279438ca5eeff4116fe",
+    "version": "0.51.0",
+    "url": "https://api.github.com/repos/awslabs/aws-sam-cli/tarball/v0.51.0",
+    "sha256": "954660be53da3b4782ee84410d71d98f6a8a21f3c77066e1d1818b635e64cda8",
     "bottle": {
         "root_url": "https://github.com/awslabs/aws-sam-cli/releases/download/v0.50.0/",
         "sha256": {
