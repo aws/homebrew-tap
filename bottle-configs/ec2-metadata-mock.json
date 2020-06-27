@@ -1,11 +1,11 @@
 {
     "name": "ec2-metadata-mock",
-    "version": "0.9.2",
+    "version": "1.0.1",
     "bin": "ec2-metadata-mock",
-    "url": "https://api.github.com/repos/aws/amazon-ec2-metadata-mock/tarball/v0.9.2",
-    "sha256": "c87157596a800f562bb46acae40322bd961ceef974f4299b0fb13f1c62d43f2a",
+    "url": "https://api.github.com/repos/aws/amazon-ec2-metadata-mock/tarball/v1.0.1",
+    "sha256": "3e4e8ff367168618c99dae3db406a6e62b614d5ef258def51b09c4e7d0d81d6b",
     "bottle": {
-        "root_url": "https://github.com/aws/amazon-ec2-metadata-mock/releases/download/v0.9.2/",
+        "root_url": "https://github.com/aws/amazon-ec2-metadata-mock/releases/download/v1.0.1/",
         "sha256": {
             "sierra": "",
             "linux": ""
