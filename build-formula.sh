@@ -8,6 +8,9 @@ BUILD_DIR="$SCRIPTPATH/build"
 # Create temp dir at root to hold files during this execution
 mkdir -p $BUILD_DIR
 
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+
+
 USAGE=$(cat << 'EOM'
   Usage: build-formula.sh  -f formula_file
   Builds the formula into a bottle and places it into the build dir.

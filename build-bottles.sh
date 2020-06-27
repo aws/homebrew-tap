@@ -9,6 +9,8 @@ BUILD_DIR="${SCRIPTPATH}/build"
 rm -rf ${BUILD_DIR}
 mkdir -p ${BUILD_DIR}
 
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+
 FAILED_BUILDS=()
 
 echo "⏳ Setting up the build environment"
