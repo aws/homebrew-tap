@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Setting up build environment
 brew tap aws/tap # adding aws tap so that we can install aws-sam-cli.
