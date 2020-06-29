@@ -9,19 +9,29 @@ BUILD_DIR="${SCRIPTPATH}/build"
 rm -rf ${BUILD_DIR}
 mkdir -p ${BUILD_DIR}
 
-export HOMEBREW_NO_INSTALL_CLEANUP=1
-
 FAILED_BUILDS=()
 
+export HOMEBREW_NO_INSTALL_CLEANUP=
+export HOMEBREW_NO_AUTO_UPDATE=1
+BREW_CORE="homebrew/core"
+SAVED_TAPS+=($(brew tap))
+SAVED_TAPS=( "${SAVED_TAPS[@]/$BREW_CORE}" )
+
+function cleanup() {
+    for tap in "${SAVED_TAPS[@]}"; do 
+      brew tap $tap
+    done
+}
+
+trap cleanup err int term kill exit
+brew untap ${SAVED_TAPS[@]} || :
+
 echo "⏳ Setting up the build environment"
-brew tap aws/tap # adding aws tap so that we can install bottles
-brew install rename || : # Gnu rename to find and replace words in file name.
-brew install jq || :
 
 for formula_file in Formula/*.rb; do 
     [ ! -e "$formula_file" ] && continue
     BOTTLE=$(basename ${formula_file} .rb)
-    ${SCRIPTPATH}/build-formula.sh -s -f "${formula_file}" || :
+    ${SCRIPTPATH}/build-formula.sh -l -f "${formula_file}" || :
     for f in ${BUILD_DIR}/${BOTTLE}*.bottle.tar.gz; do
         [ ! -e "$f" ] && FAILED_BUILDS+=(${formula_file})
         break
@@ -46,3 +56,4 @@ for succeeded_formula in ${BUILD_DIR}/*.bottle.tar.gz; do
     echo "    ✅ $(basename ${succeeded_formula} .bottle.tar.gz) was successfully built"
 done
 echo "========================================================================="
+

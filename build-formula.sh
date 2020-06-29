@@ -10,6 +10,13 @@ mkdir -p $BUILD_DIR
 
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 
+function check_and_install_brew_pkg() {
+  pkg="${1}"
+  if [[ ! -z $(command -v ${pkg}) ]]; then
+    return
+  fi
+  brew install ${pkg}
+}
 
 USAGE=$(cat << 'EOM'
   Usage: build-formula.sh  -f formula_file
@@ -21,21 +28,28 @@ USAGE=$(cat << 'EOM'
 
           Optional:
             -h          Print this usage help
-            -s          Skip the build setup to save some time if your environment is already setup
+            -l          Dynamically sets the TAP to the first git remote found that is not the official aws tap
+            -t          Specify a sepcific tap   i.e. `-t bwagner5/tap`
 EOM
 )
 
-SKIP_SETUP="false"
-TAP="aws/tap"
+
+LOCAL_FORK=0
+AWS_TAP="aws/tap"
+USER_TAP=""
+TAP="${AWS_TAP}"
 
 # Process our input arguments
-while getopts "f:sh" opt; do
+while getopts "f:hlt:" opt; do
   case ${opt} in
     f ) # Full Formula File Path
         FORMULA_FILE="${OPTARG}"
       ;;
-    s ) # Skip setup
-        SKIP_SETUP="true"
+    l ) # Local fork
+        LOCAL_FORK=1
+      ;;
+    t ) # tap
+        USER_TAP="${OPTARG}"
       ;;
     h ) 
         echo "$USAGE" 1>&2
@@ -55,31 +69,53 @@ if [[ "$#" -eq 0 ]]; then
     exit 4
 fi
 
+BREW_CORE="homebrew/core"
+SAVED_TAPS+=($(brew tap))
+SAVED_TAPS=( "${SAVED_TAPS[@]/$BREW_CORE}" )
 BOTTLE=$(basename ${FORMULA_FILE} .rb)
 
 function fail_msg() {
     echo "❌ Failed to build ${FORMULA_FILE} ❌"
     rm -f ${BUILD_DIR}/$BOTTLE*.bottle.tar.gz
     rm -f ${BUILD_DIR}/$BOTTLE*.bottle.json
+    for tap in "${SAVED_TAPS[@]}"; do 
+      brew tap $tap
+    done
     exit 2
 }
 
 trap fail_msg err int term kill
 
-if [[ "${SKIP_SETUP}" = "false" ]]; then
-    echo "⏳ Setting up the build environment"
-    brew tap "${TAP}" # adding aws tap so that we can install bottles
-    brew install rename || : # Gnu rename to find and replace words in file name.
-    brew install jq || :
+brew untap ${SAVED_TAPS[@]} 2>/dev/null || :
+
+if [[ ${USER_TAP} != "" ]]; then
+  TAP="${USER_TAP}"
+elif [[ ${LOCAL_FORK} -eq 1 ]]; then
+  ## find the first non-aws org tap which is assumed to be a user fork
+  for remote in $(git remote); do 
+    tap_url=$(git config --get remote.$remote.url)
+    tap_name=$(echo $tap_url | rev | cut -d'-' -f1 | rev | cut -d'.' -f1)
+    tap_ns=$(echo $tap_url | rev | cut -d'/' -f2 | cut -d':' -f1 | cut -d'/' -f1 | rev)
+    fqt="${tap_ns}/${tap_name}"
+    if [[ "${fqt}" != "${AWS_TAP}" ]]; then
+      TAP="${fqt}"
+      break
+    fi
+  done
 fi
+
+brew tap "${TAP}" || :
+check_and_install_brew_pkg rename
+check_and_install_brew_pkg jq
 
 echo "🎬 Starting formula build for ${FORMULA_FILE}"
 brew uninstall -f ${BOTTLE}
+
 ## Build formula from source locally
-brew install --build-from-source "${SCRIPTPATH}/${FORMULA_FILE}"
+brew install --build-from-source "${SCRIPTPATH}/${FORMULA_FILE}" "${TAP}/${BOTTLE}"
 brew uninstall -f ${BOTTLE}
 ## Build bottle
-brew install --build-bottle ${BOTTLE}
+brew install --build-bottle ${TAP}/${BOTTLE}
 
 BOTTLE_CONFIG=$(jq -r '.' ${SCRIPTPATH}/bottle-configs/${BOTTLE}.json)
 BOTTLE_ASSET_VERSION="$(echo ${BOTTLE_CONFIG} | jq -r '.version')"
@@ -91,7 +127,7 @@ echo "[${BOTTLE}]: Bottle Binary -> ${BIN_NAME}"
 
 # Need to cd since brew bottle doesn't have an option to 
 cd "${BUILD_DIR}"
-brew bottle --no-rebuild --json --root-url="${BOTTLE_ASSET_URL}" "${BOTTLE}"
+brew bottle --no-rebuild --json --root-url="${BOTTLE_ASSET_URL}" "${TAP}/${BOTTLE}"
 cd ${SCRIPTPATH}
 
 # Renaming aws-sam-cli--0.37.0.sierra.bottle.tar.gz to aws-sam-cli-0.37.0.sierra.bottle.tar.gz
@@ -112,3 +148,7 @@ if [[ "${BOTTLE_ASSET_VERSION}" != "${BUILT_BOTTLE_VERSION}" ]]; then
 fi
 
 echo "✅ [${BOTTLE}]: Verified that the new ${BOTTLE} version ${BUILT_BOTTLE_VERSION} is the same as what is expected ${BOTTLE_ASSET_VERSION} 🎉🥂✅"
+
+for tap in "${SAVED_TAPS[@]}"; do 
+  brew tap $tap
+done
