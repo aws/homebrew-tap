@@ -4,9 +4,7 @@ require_relative '../ConfigProvider/config_provider'
 class AwsSamCliRc < Formula
   include Language::Python::Virtualenv
 
-  config_provider = ConfigProvider.new(
-    File.join(File.dirname(__FILE__), "..", "bottle-config-rc.json")
-  )
+  config_provider = ConfigProvider.new('aws-sam-cli-rc')
 
   desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications"
   homepage "https://github.com/awslabs/aws-sam-cli/"
