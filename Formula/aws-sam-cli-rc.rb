@@ -4,15 +4,17 @@ require_relative '../ConfigProvider/config_provider'
 class AwsSamCli < Formula
   include Language::Python::Virtualenv
 
-  config_provider = ConfigProvider.new
+  config_provider = ConfigProvider.new(
+    File.join(File.dirname(__FILE__), "..", "bottle-config-rc.json")
+  )
 
   desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications"
   homepage "https://github.com/awslabs/aws-sam-cli/"
   url config_provider.url()
   sha256 config_provider.sha256
-  head "https://github.com/awslabs/aws-sam-cli.git", :branch => "develop"
+  head "https://github.com/awslabs/aws-sam-cli.git", :branch => "release-v1.0.0"
 
-  conflicts_with 'aws-sam-cli-rc', :because => "both install the 'sam' binary"
+  conflicts_with 'aws-sam-cli', :because => "both install the 'sam' binary"
 
   bottle do
     root_url config_provider.root_url()
@@ -26,7 +28,7 @@ class AwsSamCli < Formula
   def install
     venv = virtualenv_create(libexec, "python3")
     system libexec/"bin/pip", "install", "pip==19.2.3"
-    system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
+    system libexec/"bin/pip", "install", "-v", "--pre", "--ignore-installed", buildpath
     system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
     venv.pip_install_and_link buildpath
   end
