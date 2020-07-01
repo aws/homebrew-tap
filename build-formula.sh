@@ -77,8 +77,8 @@ BOTTLE=$(basename ${FORMULA_FILE} .rb)
 
 function fail_msg() {
     echo "❌ Failed to build ${FORMULA_FILE} ❌"
-    # rm -f ${BUILD_DIR}/$BOTTLE*.bottle.tar.gz
-    # rm -f ${BUILD_DIR}/$BOTTLE*.bottle.json
+    rm -f ${BUILD_DIR}/$BOTTLE*.bottle.tar.gz
+    rm -f ${BUILD_DIR}/$BOTTLE*.bottle.json
     brew uninstall -f ${BOTTLE} || :
     for tap in "${SAVED_TAPS[@]}"; do 
       brew tap $tap
