@@ -9,6 +9,7 @@ BUILD_DIR="$SCRIPTPATH/build"
 mkdir -p $BUILD_DIR
 
 export HOMEBREW_NO_INSTALL_CLEANUP=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 function check_and_install_brew_pkg() {
   pkg="${1}"
@@ -76,8 +77,9 @@ BOTTLE=$(basename ${FORMULA_FILE} .rb)
 
 function fail_msg() {
     echo "❌ Failed to build ${FORMULA_FILE} ❌"
-    rm -f ${BUILD_DIR}/$BOTTLE*.bottle.tar.gz
-    rm -f ${BUILD_DIR}/$BOTTLE*.bottle.json
+    # rm -f ${BUILD_DIR}/$BOTTLE*.bottle.tar.gz
+    # rm -f ${BUILD_DIR}/$BOTTLE*.bottle.json
+    brew uninstall -f ${BOTTLE} || :
     for tap in "${SAVED_TAPS[@]}"; do 
       brew tap $tap
     done
@@ -108,6 +110,7 @@ brew tap "${TAP}" || :
 check_and_install_brew_pkg rename
 check_and_install_brew_pkg jq
 
+
 echo "🎬 Starting formula build for ${FORMULA_FILE}"
 brew uninstall -f ${BOTTLE}
 
@@ -130,11 +133,12 @@ cd "${BUILD_DIR}"
 brew bottle --no-rebuild --json --root-url="${BOTTLE_ASSET_URL}" "${TAP}/${BOTTLE}"
 cd ${SCRIPTPATH}
 
+RELEASE_FILE="$(ls ${BUILD_DIR}/${BOTTLE}--*.bottle.tar.gz)"
 # Renaming aws-sam-cli--0.37.0.sierra.bottle.tar.gz to aws-sam-cli-0.37.0.sierra.bottle.tar.gz
 rename 's/--/-/' ${BUILD_DIR}/*.bottle.* # replacing `--` with `-`
+RELEASE_FILE=$(echo ${RELEASE_FILE} | sed 's/--/-/')
 
 echo "[${BOTTLE}]: Brew bottles are built. Validating them now."
-RELEASE_FILE="$(ls ${BUILD_DIR}/${BOTTLE}-*.bottle.tar.gz)"
 echo "[${BOTTLE}]: Release file -> ${RELEASE_FILE}"
 
 brew uninstall -f ${BOTTLE}
@@ -148,6 +152,8 @@ if [[ "${BOTTLE_ASSET_VERSION}" != "${BUILT_BOTTLE_VERSION}" ]]; then
 fi
 
 echo "✅ [${BOTTLE}]: Verified that the new ${BOTTLE} version ${BUILT_BOTTLE_VERSION} is the same as what is expected ${BOTTLE_ASSET_VERSION} 🎉🥂✅"
+
+brew uninstall -f ${BOTTLE}
 
 for tap in "${SAVED_TAPS[@]}"; do 
   brew tap $tap
