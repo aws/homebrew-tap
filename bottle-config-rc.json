@@ -5,8 +5,8 @@
     "bottle": {
         "root_url": "https://github.com/awslabs/aws-sam-cli/releases/download/v1.0.0rc1/",
         "sha256": {
-            "sierra": "stub",
-            "linux": "stub"
+            "sierra": "04ce66a7af6d0e0ba2800ee334ac9847273d8b8344ab969b48668f16d8109073",
+            "linux": "e0d8abc2ade9e50fdda4c29929b994063f6462b6e65a9a0d45a0f2d40da05fe7"
         }
     }
 }
