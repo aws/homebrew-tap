@@ -1,36 +1,59 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Setting up build environment
-brew tap aws/tap # adding aws tap so that we can install aws-sam-cli.
-brew install rename # Gnu rename to find and replace words in file name.
-brew install jq
-brew uninstall -f aws-sam-cli
-brew install --build-bottle aws-sam-cli
+# Get path of this script so that paths are relative to it.
+# This allows it to be executed from anywhere on the file system.
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+BUILD_DIR="${SCRIPTPATH}/build"
+# Create temp dir at root to hold files during this execution
+rm -rf ${BUILD_DIR}
+mkdir -p ${BUILD_DIR}
 
-SAM_CLI_VERSION="$(cat bottle-config.json | jq -r '.version')"
-echo "Sam cli version $SAM_CLI_VERSION"
-ROOT_URL=$(echo "https://github.com/awslabs/aws-sam-cli/releases/download/v"$SAM_CLI_VERSION"/")
-echo "Root url $ROOT_URL"
+FAILED_BUILDS=()
 
-brew bottle --no-rebuild --json --root-url=$ROOT_URL aws-sam-cli
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+BREW_CORE="homebrew/core"
+SAVED_TAPS+=($(brew tap))
+SAVED_TAPS=( "${SAVED_TAPS[@]/$BREW_CORE}" )
 
-# Renaming aws-sam-cli--0.37.0.mojave.bottle.tar.gz to aws-sam-cli-0.37.0.sierra.bottle.tar.gz
-rename 's/mojave/sierra/' aws-sam-cli* # replacing mojave with sierra.
-rename 's/--/-/' aws-sam-cli* # replacing `--` with `-`
+function cleanup() {
+    for tap in "${SAVED_TAPS[@]}"; do 
+      brew tap $tap
+    done
+}
 
-echo "Brew bottles are built. Validating them now."
-RELEASE_FILE="$(ls *.bottle.tar.gz)"
-echo "Release file: $RELEASE_FILE"
+trap cleanup err int term kill exit
+brew untap ${SAVED_TAPS[@]} || :
 
-brew uninstall -f aws-sam-cli
-echo "Installing release file"
-brew install $RELEASE_FILE
+echo "⏳ Setting up the build environment"
 
-NEW_SAM_CLI_VERSION="$(sam --version | cut -d ' ' -f 4)"
-if [ $SAM_CLI_VERSION == $NEW_SAM_CLI_VERSION ]
-then
-    echo "Verified that new sam cli version $NEW_SAM_CLI_VERSION is same as what is expected $SAM_CLI_VERSION 🎉🥂✅"
-else
-    echo "Sam cli version check failed. Expected: $SAM_CLI_VERSION, Received: $NEW_SAM_CLI_VERSION ❌"
-    exit 1
+for formula_file in Formula/*.rb; do 
+    [ ! -e "$formula_file" ] && continue
+    BOTTLE=$(basename ${formula_file} .rb)
+    ${SCRIPTPATH}/build-formula.sh -l -f "${formula_file}" || :
+    for f in ${BUILD_DIR}/${BOTTLE}*.bottle.tar.gz; do
+        [ ! -e "$f" ] && FAILED_BUILDS+=(${formula_file})
+        break
+    done
+done
+
+printf "\n"
+echo "========================================================================="
+if [[ ${#FAILED_BUILDS[@]} -gt 0 ]]; then
+    echo "Failure Summary:"
+    for failed_formula in "${FAILED_BUILDS[@]}"; do
+        echo "    ❌ ${failed_formula} failed to build"
+    done
+else 
+    echo "✅ Successfully built all formulas"
 fi
+
+printf "\n"
+echo "Success Summary:"
+for succeeded_formula in ${BUILD_DIR}/*.bottle.tar.gz; do
+    [ ! -e "$succeeded_formula" ] && continue
+    echo "    ✅ $(basename ${succeeded_formula} .bottle.tar.gz) was successfully built"
+done
+echo "========================================================================="
+
