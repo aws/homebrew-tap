@@ -18,7 +18,7 @@ class Ec2MetadataMock < Formula
   depends_on "go" => :build
 
   def install
-    system "VERSION=v#{$config_provider.version} make compile"
+    system "GOPROXY=direct VERSION=v#{$config_provider.version} make compile"
     bin.install "build/ec2-metadata-mock"
   end
 
