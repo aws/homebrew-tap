@@ -21,7 +21,7 @@ class AwsSamCliRc < Formula
     sha256 config_provider.linux_hash() => :x86_64_linux
   end
 
-  depends_on "python"
+  depends_on "python@3.7"
 
   def install
     venv = virtualenv_create(libexec, "python3")
