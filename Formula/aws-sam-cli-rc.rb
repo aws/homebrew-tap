@@ -24,7 +24,7 @@ class AwsSamCliRc < Formula
   depends_on "python@3.7"
 
   def install
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.7")
     system libexec/"bin/pip", "install", "pip==19.2.3"
     system libexec/"bin/pip", "install", "-v", "--pre", "--ignore-installed", buildpath
     system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
