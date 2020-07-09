@@ -9,7 +9,8 @@ BUILD_DIR="$SCRIPTPATH/build"
 mkdir -p $BUILD_DIR
 
 export HOMEBREW_NO_INSTALL_CLEANUP=1
-export HOMEBREW_NO_AUTO_UPDATE=1
+# Commenting out the auto upgrade since appveyor mac has an old version and fails buildilng bottles for SAM CLI
+# export HOMEBREW_NO_AUTO_UPDATE=1
 
 function check_and_install_brew_pkg() {
   pkg="${1}"
