@@ -132,22 +132,27 @@ echo "[${BOTTLE}]: Root URL -> ${BOTTLE_ASSET_URL}"
 BIN_NAME=$(echo ${BOTTLE_CONFIG} | jq -r '.bin')
 echo "[${BOTTLE}]: Bottle Binary -> ${BIN_NAME}"
 
-# Need to cd since brew bottle doesn't have an option to 
-cd "${BUILD_DIR}"
-brew bottle --no-rebuild --json --root-url="${BOTTLE_ASSET_URL}" "${TAP}/${BOTTLE}"
-cd ${SCRIPTPATH}
+if [[ $(grep -c 'bottle :unneeded' "${FORMULA_FILE}") -eq 0 ]]; then 
+  # Need to cd since brew bottle doesn't have an option to 
+  cd "${BUILD_DIR}"
+  brew bottle --no-rebuild --json --root-url="${BOTTLE_ASSET_URL}" "${TAP}/${BOTTLE}"
+  cd ${SCRIPTPATH}
 
-RELEASE_FILE="$(ls ${BUILD_DIR}/${BOTTLE}--*.bottle.tar.gz)"
-# Renaming aws-sam-cli--0.37.0.sierra.bottle.tar.gz to aws-sam-cli-0.37.0.sierra.bottle.tar.gz
-rename 's/--/-/' ${BUILD_DIR}/*.bottle.* # replacing `--` with `-`
-RELEASE_FILE=$(echo ${RELEASE_FILE} | sed 's/--/-/')
+  RELEASE_FILE="$(ls ${BUILD_DIR}/${BOTTLE}--*.bottle.tar.gz)"
+  # Renaming aws-sam-cli--0.37.0.sierra.bottle.tar.gz to aws-sam-cli-0.37.0.sierra.bottle.tar.gz
+  rename 's/--/-/' ${BUILD_DIR}/*.bottle.* # replacing `--` with `-`
+  RELEASE_FILE=$(echo ${RELEASE_FILE} | sed 's/--/-/')
 
-echo "[${BOTTLE}]: Brew bottles are built. Validating them now."
-echo "[${BOTTLE}]: Release file -> ${RELEASE_FILE}"
+  echo "[${BOTTLE}]: Brew bottles are built. Validating them now."
+  echo "[${BOTTLE}]: Release file -> ${RELEASE_FILE}"
 
-brew uninstall -f ${BOTTLE}
-echo "[${BOTTLE}]: Installing release file"
-brew install ${RELEASE_FILE}
+  brew uninstall -f ${BOTTLE}
+  echo "[${BOTTLE}]: Installing release file"
+  brew install ${RELEASE_FILE}
+else 
+  ## Touch a fake bottle so that build summary is accurate
+  touch "${BUILD_DIR}/${BOTTLE}.bottle.tar.gz"
+fi
 
 BUILT_BOTTLE_VERSION="$(${BIN_NAME} --version | grep -Eo '[0-9]+\.[0-9]+\.[0-9a-zA-Z]+')"
 if [[ "${BOTTLE_ASSET_VERSION}" != "${BUILT_BOTTLE_VERSION}" ]]; then
