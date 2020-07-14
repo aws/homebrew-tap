@@ -49,4 +49,8 @@ class ConfigProvider
     def linux_hash
         @config_data['bottle']['sha256']['linux']
     end
+
+    def linux_arm_hash
+        @config_data['bottle']['sha256']['linux_arm']
+    end
 end

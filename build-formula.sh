@@ -5,8 +5,9 @@ set -euo pipefail
 # This allows it to be executed from anywhere on the file system.
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 BUILD_DIR="$SCRIPTPATH/build"
+RESULTS_DIR="$BUILD_DIR/results"
 # Create temp dir at root to hold files during this execution
-mkdir -p $BUILD_DIR
+mkdir -p $BUILD_DIR $RESULTS_DIR
 
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 # Commenting out the auto upgrade since appveyor mac has an old version and fails buildilng bottles for SAM CLI
@@ -90,9 +91,9 @@ function fail_msg() {
     exit 2
 }
 
-trap fail_msg err int term kill
+trap fail_msg err int term
 
-brew untap ${SAVED_TAPS[@]} 2>/dev/null || :
+brew untap "${SAVED_TAPS[@]}" 2>/dev/null || :
 
 if [[ ${USER_TAP} != "" ]]; then
   TAP="${USER_TAP}"
@@ -149,9 +150,6 @@ if [[ $(grep -c 'bottle :unneeded' "${FORMULA_FILE}") -eq 0 ]]; then
   brew uninstall -f ${BOTTLE}
   echo "[${BOTTLE}]: Installing release file"
   brew install ${RELEASE_FILE}
-else 
-  ## Touch a fake bottle so that build summary is accurate
-  touch "${BUILD_DIR}/${BOTTLE}.bottle.tar.gz"
 fi
 
 BUILT_BOTTLE_VERSION="$(${BIN_NAME} --version | grep -Eo '[0-9]+\.[0-9]+\.[0-9a-zA-Z]+')"
@@ -161,6 +159,8 @@ if [[ "${BOTTLE_ASSET_VERSION}" != "${BUILT_BOTTLE_VERSION}" ]]; then
 fi
 
 echo "✅ [${BOTTLE}]: Verified that the new ${BOTTLE} version ${BUILT_BOTTLE_VERSION} is the same as what is expected ${BOTTLE_ASSET_VERSION} 🎉🥂✅"
+## Touch results file for build-bottles summary
+touch "${RESULTS_DIR}/${BOTTLE}"
 
 brew uninstall -f ${BOTTLE}
 
