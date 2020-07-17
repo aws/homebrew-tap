@@ -7,19 +7,24 @@ class Ec2MetadataMock < Formula
 
   desc "EC2 Metadata Mock is a testing tool to mock out the EC2 Instance Metadata Service"
   homepage "https://github.com/aws/amazon-ec2-metadata-mock/"
-  url $config_provider.url()
-  sha256 $config_provider.sha256
-  head "https://github.com/aws/amazon-ec2-metadata-mock.git", :branch => "master"
-  bottle do
-    root_url $config_provider.root_url()
-    cellar :any_skip_relocation
+  version $config_provider.version
+  bottle :unneeded
+
+  if OS.mac?
+    url "#{$config_provider.root_url}-darwin-amd64.tar.gz"
+    sha256 $config_provider.sierra_hash
+  elsif OS.linux?
+    if Hardware::CPU.intel?
+      url "#{$config_provider.root_url}-linux-amd64.tar.gz"
+      sha256 $config_provider.linux_hash
+    elsif Hardware::CPU.arm?
+      url "#{$config_provider.root_url}-linux-arm64.tar.gz"
+      sha256 $config_provider.linux_arm_hash
+    end
   end
 
-  depends_on "go" => :build
-
   def install
-    system "GOPROXY=direct VERSION=v#{$config_provider.version} make compile"
-    bin.install "build/ec2-metadata-mock"
+    bin.install $config_provider.bin
   end
 
   test do
