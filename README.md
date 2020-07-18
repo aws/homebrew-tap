@@ -18,7 +18,7 @@ brew install <FORMULA>
 | [copilot-cli](https://github.com/aws/copilot-cli) | [formula](Formula/copilot-cli.rb) |
 | [ec2-instance-selector](https://github.com/aws/amazon-ec2-instance-selector) | [formula](Formula/ec2-instance-selector.rb) |
 | [ec2-metadata-mock](https://github.com/aws/amazon-ec2-metadata-mock) | [formula](Formula/ec2-metadata-mock.rb) |
-
+| [xray-daemon](https://github.com/aws/aws-xray-daemon) | [formula](Formula/xray-daemon.rb) |
 
 ## Documentation
 
