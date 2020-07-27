@@ -17,18 +17,16 @@ class XrayDaemon < Formula
     if Hardware::CPU.intel?
       url "#{$config_provider.root_url}/aws-xray-daemon-linux-#{$config_provider.version}.zip"
       sha256 $config_provider.linux_hash
-    elsif Hardware::CPU.arm?
-      url "#{$config_provider.root_url}/aws-xray-daemon-linux-arm64-#{$config_provider.version}.zip"
-      sha256 $config_provider.linux_arm_hash
     end
   end
 
   def install
     if OS.mac?
-      bin.install "#{$config_provider.bin}_mac"
-      mv bin/"xray_mac", bin/"xray"
+      bin.install "xray_mac"
+      mv bin/"xray_mac", bin/"#{$config_provider.bin}"
     else
-      bin.install $config_provider.bin
+      bin.install "xray"
+      mv bin/"xray", bin/"#{$config_provider.bin}"
     end
   end
 
