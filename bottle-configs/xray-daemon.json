@@ -1,0 +1,13 @@
+{
+    "name": "xray-daemon",
+    "version": "3.2.0",
+    "bin": "xray-daemon",
+    "bottle": {
+        "root_url": "https://s3.us-east-2.amazonaws.com/aws-xray-assets.us-east-2/xray-daemon",
+        "sha256": {
+            "sierra": "22a2b0a8ec9bf0c8d3ea1aaea0ad4951bf5b125782165180b0389c36d1246e4f",
+            "linux": "5563498bd5c6dd08556827bc87aec269f0655349fe1079caf2d21d0049fc90ca",
+            "linux_arm": ""
+        }
+    }
+}
