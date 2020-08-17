@@ -1,13 +1,13 @@
 {
     "name": "ec2-metadata-mock",
-    "version": "1.4.1",
+    "version": "1.5.0",
     "bin": "ec2-metadata-mock",
     "bottle": {
-        "root_url": "https://github.com/aws/amazon-ec2-metadata-mock/releases/download/v1.4.1/ec2-metadata-mock",
+        "root_url": "https://github.com/aws/amazon-ec2-metadata-mock/releases/download/v1.5.0/ec2-metadata-mock",
         "sha256": {
-            "sierra": "0e450cd94b57c7f672f7493e0b687bdc043870660a655dff41a477c91de19447",
-            "linux": "dc340e475b40e5755c0b7a304e195877a58f3e4d762082c43b8633c6611e5020",
-            "linux_arm": "e3f8008f07deff0ec941e59a70d134c73c3b4504b4a09f9ee8417364e8914d29"
+            "sierra": "6bd42cc46434a20df82ac13d00a2070cc1f538a3ceb5892e1d7bf40a7c0625ec",
+            "linux": "b88656db73846956efe46e88db3466073a34252e9d4690eaed000c0bacdfdd1e",
+            "linux_arm": "6fc0e09ff1b6632f703c64c767849dbc85b7078ba9528d239d054921bfae74a5"
         }
     }
 }
