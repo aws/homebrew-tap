@@ -6,7 +6,7 @@
         "root_url": "https://github.com/aws/copilot-cli/releases/download/v0.3.0/copilot_0.3.0_",
         "sha256": {
             "sierra": "094e9ceb99dfac2d24b20891c9254254573f317b6bf3bf6b9505640ba58b32c5",
-            "linux": "5c5ea964c7fe2e0d1618ba7475a2a341ef129d63a05d00ef46e4dfd362b3b617"
+            "linux": "2a49c17964537cf2fc1866c5c48a377629283d78cffc7f79ed5bc85f012598d1"
         }
     }
 }
