@@ -1,0 +1,13 @@
+{
+    "name": "aws-simple-ec2-cli",
+    "version": "0.5.1",
+    "bin": "aws-simple-ec2-cli",
+    "bottle": {
+        "root_url": "https://github.com/awslabs/aws-simple-ec2-cli/releases/download/v0.5.1/aws-simple-ec2-cli",
+        "sha256": {
+            "sierra": "37795e65c4693c833dc7a9ec78c124a70998e8b3b007088272fc55bad598b4fa",
+            "linux": "d31b0ea8e165e8f820458630d33fa6f74677c4526a1c00a784700686d95d2248",
+            "linux_arm": "dc4efa9f2e6a77cc4ac6d4a7f663b6ff36cedaf29f0be135c5154a07d31eb9b5"
+        }
+    }
+}
