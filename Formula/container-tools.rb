@@ -14,7 +14,7 @@ class ContainerTools < Formula
     depends_on "docker-credential-helper-ecr"
 
     def install
-        (bin+"awscontainertools").write <<-EOS.undent
+        (bin+"awscontainertools").write <<-EOS
             #!/bin/sh
 
             echo "AWS Container Tools installed"
