@@ -7,7 +7,7 @@
     "bottle": {
         "root_url": "https://github.com/aws/aws-sam-cli/releases/download/v1.3.1/",
         "sha256": {
-            "sierra": "b204fa69646eec05e369afa0409f2f094e62e43c82a094be404e28a15663702a",
+            "sierra": "ecc424ff45cc16ae31deb97a30c5cf2f3f883e4d4cef0e27f75effe6e756939b",
             "linux": "281a80ba4e3871265c976604e6d1763dcf5ca25fd8d4d852c3bd295110c8a721"
         }
     }
