@@ -122,6 +122,8 @@ brew uninstall -f ${BOTTLE}
 ## Build formula from source locally
 brew install --build-from-source "${SCRIPTPATH}/${FORMULA_FILE}"
 brew uninstall -f ${BOTTLE}
+## Workaround, uninstall left sam executable in following folder in linux, removing it manually
+rm -rf /home/linuxbrew/.linuxbrew/bin/sam
 ## Build bottle
 brew install --build-bottle ${TAP}/${BOTTLE}
 
