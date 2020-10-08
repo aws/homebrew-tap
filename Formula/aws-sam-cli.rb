@@ -7,10 +7,10 @@ class AwsSamCli < Formula
   config_provider = ConfigProvider.new('aws-sam-cli')
 
   desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications"
-  homepage "https://github.com/awslabs/aws-sam-cli/"
+  homepage "https://github.com/aws/aws-sam-cli/"
   url config_provider.url()
   sha256 config_provider.sha256
-  head "https://github.com/awslabs/aws-sam-cli.git", :branch => "develop"
+  head "https://github.com/aws/aws-sam-cli.git", :branch => "develop"
 
   conflicts_with 'aws-sam-cli-rc', :because => "both install the 'sam' binary"
 
@@ -21,10 +21,10 @@ class AwsSamCli < Formula
     sha256 config_provider.linux_hash() => :x86_64_linux
   end
 
-  depends_on "python@3.7"
+  depends_on "python@3.8"
 
   def install
-    venv = virtualenv_create(libexec, "python3.7")
+    venv = virtualenv_create(libexec, "python3.8")
     system libexec/"bin/pip", "install", "pip==19.2.3"
     system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
     system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
