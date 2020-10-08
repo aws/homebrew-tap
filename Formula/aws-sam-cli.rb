@@ -21,11 +21,10 @@ class AwsSamCli < Formula
     sha256 config_provider.linux_hash() => :x86_64_linux
   end
 
-  depends_on "python@3.7"
+  depends_on "python@3.8"
 
   def install
-    venv = virtualenv_create(libexec, "python3.7")
-    system libexec/"bin/pip", "install", "pip==19.2.3"
+    venv = virtualenv_create(libexec, "python3.8")
     system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
     system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
     venv.pip_install_and_link buildpath
