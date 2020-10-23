@@ -3,10 +3,10 @@
     "name": "copilot-cli",
     "bin": "copilot",
     "bottle": {
-        "root_url": "https://github.com/aws/copilot-cli/releases/download/v0.4.0/copilot_0.4.0_",
+        "root_url": "https://github.com/aws/copilot-cli/releases/download/v0.5.0/copilot_0.5.0_",
         "sha256": {
-            "sierra": "fe3a4ace112e2ca7824f3c91d52c7dfc8d738b6d3bd972940ab30b1832cb4779",
-            "linux": "bb803b91c805cf04aa4bd22b6187b7b1b470f0d637c99f1ad179770fcc4c3a28"
+            "sierra": "411afd57f03cb191432210c9278c564db796e494067f264ec4fe3b68873bb453",
+            "linux": "43ea64f01971ee06b3fc6dda09fcf82b316d5f6c1eeca98f4e66e550703aa612"
         }
     }
 }
