@@ -23,10 +23,12 @@ class CopilotCli < Formula
       bin.install $config_provider.bin
 
       # Install bash completion
-      (bash_completion/$config_provider.bin).write `#{bin}/#{$config_provider.bin} completion bash`
-
+      output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/copilot", "completion", "bash")
+      (bash_completion/"copilot").write output
+  
       # Install zsh completion
-      (zsh_completion/$config_provider.bin).write `#{bin}/#{$config_provider.bin} completion zsh`
+      output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/copilot", "completion", "zsh")
+      (zsh_completion/"_copilot").write output
     end
 
     test do
