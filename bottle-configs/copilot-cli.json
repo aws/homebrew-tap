@@ -1,12 +1,12 @@
 {
-    "version": "1.0.0",
+    "version": "1.1.0",
     "name": "copilot-cli",
     "bin": "copilot",
     "bottle": {
-        "root_url": "https://github.com/aws/copilot-cli/releases/download/v1.0.0/copilot_1.0.0_",
+        "root_url": "https://github.com/aws/copilot-cli/releases/download/v1.1.0/copilot_1.1.0_",
         "sha256": {
-            "sierra": "eaed961512965fa69410b7851477b7659c12076e57e605d268bd34c3d7f07f59",
-            "linux": "61267b6817b12935817a606df354dc6f09d64568b7f6cc96bc60189a3f96f80b"
+            "sierra": "01632b4e679bfce1904667597450b17370d6849aedac8a496fe485fef052ce4c",
+            "linux": "e74fc5bf9d4a729ea971e0606844d01cfa6035ff6432c9525216cf2c946cba31"
         }
     }
 }
