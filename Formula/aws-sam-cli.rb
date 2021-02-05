@@ -7,10 +7,10 @@ class AwsSamCli < Formula
   config_provider = ConfigProvider.new('aws-sam-cli')
 
   desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications"
-  homepage "https://github.com/awslabs/aws-sam-cli/"
+  homepage "https://github.com/aws/aws-sam-cli/"
   url config_provider.url()
   sha256 config_provider.sha256
-  head "https://github.com/awslabs/aws-sam-cli.git", :branch => "develop"
+  head "https://github.com/aws/aws-sam-cli.git", :branch => "master"
 
   conflicts_with 'aws-sam-cli-rc', :because => "both install the 'sam' binary"
 
