@@ -3,7 +3,7 @@ version: 1.0.{build}
 branches:
   # whitelist
   only:
-    - nightly
+    - master
 
 image:
   - macos-mojave
@@ -34,7 +34,7 @@ for:
 
 # Building bottles shell script.
 build_script:
-  - ./build-formula.sh -f Formula/aws-sam-cli.rb
+  - ./build-formula.sh -f Formula/aws-sam-cli-nightly.rb
 
 artifacts:
   - path: "build/*.bottle.tar.gz"

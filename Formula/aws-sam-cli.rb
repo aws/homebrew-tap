@@ -13,6 +13,7 @@ class AwsSamCli < Formula
   head "https://github.com/awslabs/aws-sam-cli.git", :branch => "develop"
 
   conflicts_with 'aws-sam-cli-rc', :because => "both install the 'sam' binary"
+  conflicts_with 'aws-sam-cli-nightly', :because => "both install the 'sam' binary"
 
   bottle do
     root_url config_provider.root_url()
