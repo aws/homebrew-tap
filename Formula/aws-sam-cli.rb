@@ -13,6 +13,7 @@ class AwsSamCli < Formula
   head "https://github.com/awslabs/aws-sam-cli.git", :branch => "develop"
 
   conflicts_with 'aws-sam-cli-rc', :because => "both install the 'sam' binary"
+  conflicts_with 'aws-sam-cli-nightly', :because => "both install the 'sam' binary"
 
   bottle do
     root_url config_provider.root_url()
@@ -25,7 +26,7 @@ class AwsSamCli < Formula
 
   def install
     venv = virtualenv_create(libexec, "python3.8")
-    system libexec/"bin/pip", "install", "pip==19.2.3"
+    system libexec/"bin/pip", "install", "--upgrade", "pip"
     system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
     system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
     venv.pip_install_and_link buildpath
