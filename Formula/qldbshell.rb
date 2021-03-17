@@ -1,6 +1,9 @@
+# -*- coding: utf-8 -*-
+require_relative '../ConfigProvider/config_provider'
+
 class QldbShell < Formula
 
-  $config_provider = ConfigProvider.new('aws-simple-ec2-cli')
+  $config_provider = ConfigProvider.new('qldbshell')
 
   desc "A CLI for interacting with QLDB ledgers"
   homepage "https://github.com/awslabs/amazon-qldb-shell"
