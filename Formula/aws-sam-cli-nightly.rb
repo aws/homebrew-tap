@@ -12,9 +12,6 @@ class AwsSamCliNightly < Formula
   sha256 config_provider.sha256
   head "https://github.com/awslabs/aws-sam-cli.git", :branch => "nightly-builds"
 
-  conflicts_with 'aws-sam-cli-rc', :because => "both install the 'sam' binary"
-  conflicts_with 'aws-sam-cli', :because => "both install the 'sam' binary"
-
   bottle do
     root_url config_provider.root_url()
     cellar :any_skip_relocation
@@ -28,11 +25,11 @@ class AwsSamCliNightly < Formula
     venv = virtualenv_create(libexec, "python3.8")
     system libexec/"bin/pip", "install", "--upgrade", "pip"
     system libexec/"bin/pip", "install", "-v", "--pre", "--ignore-installed", buildpath
-    system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
+    system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli-nightly"
     venv.pip_install_and_link buildpath
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/sam --help")
+    assert_match "Usage", shell_output("#{bin}/sam-nightly --help")
   end
 end
