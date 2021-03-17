@@ -3,7 +3,7 @@ version: 1.0.{build}
 branches:
   # whitelist
   only:
-    - nightly
+    - master
 
 image:
   - macos-mojave

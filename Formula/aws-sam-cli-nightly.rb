@@ -10,7 +10,7 @@ class AwsSamCliNightly < Formula
   homepage "https://github.com/awslabs/aws-sam-cli/"
   url config_provider.url()
   sha256 config_provider.sha256
-  head "https://github.com/awslabs/aws-sam-cli.git", :branch => "nightly"
+  head "https://github.com/awslabs/aws-sam-cli.git", :branch => "nightly-builds"
 
   conflicts_with 'aws-sam-cli-rc', :because => "both install the 'sam' binary"
   conflicts_with 'aws-sam-cli', :because => "both install the 'sam' binary"
