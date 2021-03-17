@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 require_relative '../ConfigProvider/config_provider'
 
-class QldbShell < Formula
+class Qldbshell < Formula
 
   $config_provider = ConfigProvider.new('qldbshell')
 
