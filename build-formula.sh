@@ -152,7 +152,7 @@ if [[ $(grep -c 'bottle :unneeded' "${FORMULA_FILE}") -eq 0 ]]; then
   brew install ${RELEASE_FILE}
 fi
 
-BUILT_BOTTLE_VERSION="$(${BIN_NAME} --version | grep -Eo '[0-9]+\.[0-9]+\.[0-9a-zA-Z]+')"
+BUILT_BOTTLE_VERSION="$(${BIN_NAME} --version | grep -Eo '[0-9]+\.[0-9]+\.[0-9a-zA-Z\.]+')"
 if [[ "${BOTTLE_ASSET_VERSION}" != "${BUILT_BOTTLE_VERSION}" ]]; then
     echo "❌ [${BOTTLE}]: Version check failed. Expected: ${BOTTLE_ASSET_VERSION}, Received: ${BUILT_BOTTLE_VERSION} ❌"
     exit 1
