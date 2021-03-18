@@ -26,6 +26,7 @@ class AwsSamCliNightly < Formula
     system libexec/"bin/pip", "install", "--upgrade", "pip"
     system libexec/"bin/pip", "install", "-v", "--pre", "--ignore-installed", buildpath
     system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
+    # bin folder is not created automatically
     self.bin.mkpath
     venv.pip_install_and_link buildpath
   end
