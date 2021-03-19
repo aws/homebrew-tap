@@ -41,7 +41,7 @@ EOM
 
 
 LOCAL_FORK=0
-AWS_TAP="aws/tap"
+AWS_TAP="wchengru/tap"
 USER_TAP=""
 TAP="${AWS_TAP}"
 
