@@ -6,7 +6,7 @@ class AwsSamCliNightly < Formula
 
   config_provider = ConfigProvider.new('aws-sam-cli-nightly')
 
-  desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications"
+  desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications. This is a pre-release version of AWS SAM CLI."
   homepage "https://github.com/aws/aws-sam-cli/"
   url config_provider.url()
   sha256 config_provider.sha256
@@ -26,6 +26,7 @@ class AwsSamCliNightly < Formula
     system libexec/"bin/pip", "install", "--upgrade", "pip"
     system libexec/"bin/pip", "install", "-v", "--pre", "--ignore-installed", buildpath
     system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
+    # bin folder is not created automatically
     self.bin.mkpath
     venv.pip_install_and_link buildpath
   end
