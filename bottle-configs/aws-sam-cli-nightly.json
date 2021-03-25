@@ -5,10 +5,10 @@
     "name": "aws-sam-cli-nightly",
     "bin": "sam-nightly",
     "bottle": {
-        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/sam-cli-nightly/",
+        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/sam-cli-nightly",
         "sha256": {
-            "sierra": "0b0151e6418692987a84225d8df4ea91142824565a396e2b9784011dcd34935f",
-            "linux": "852bd258d1b38d56474d167017682ddf049eff71014113e441e6ec2920bdc505"
+            "sierra": "ab419c57dee46514eeeba7066ed683751e426d5ca8728a14badf9febdd3d3597",
+            "linux": "fb0353fdaddb32d978becf55586e2de40972ea512680975ce1b8099fa4bfe7a7"
         }
     }
 }
