@@ -11,7 +11,8 @@ class Qldbshell < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "#{$config_provider.root_url}v#{$config_provider.version}/#{$config_provider.bin}-mac.tar.gz"
+    # e.g. https://github.com/awslabs/amazon-qldb-shell/releases/download/v2.0.9/qldb-v2.0.9-mac.tar.gz
+    url "#{$config_provider.root_url}v#{$config_provider.version}/#{$config_provider.bin}-v#{$config_provider.version}-mac.tar.gz"
     sha256 $config_provider.sierra_hash
   end
 
