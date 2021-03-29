@@ -17,5 +17,6 @@ class Qldbshell < Formula
 
   def install
     bin.install $config_provider.bin
+    puts "Run `qldb --ledger <your ledger name>` to start using the QLDB Shell"
   end
 end
