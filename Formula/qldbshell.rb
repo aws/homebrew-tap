@@ -14,6 +14,10 @@ class Qldbshell < Formula
     # e.g. https://github.com/awslabs/amazon-qldb-shell/releases/download/v2.0.9/qldb-v2.0.9-mac.tar.gz
     url "#{$config_provider.root_url}v#{$config_provider.version}/#{$config_provider.bin}-v#{$config_provider.version}-mac.tar.gz"
     sha256 $config_provider.sierra_hash
+  elsif OS.linux?
+    # e.g. https://github.com/awslabs/amazon-qldb-shell/releases/download/v2.0.9/qldb-v2.0.9-linux.tar.gz
+    url "#{$config_provider.root_url}v#{$config_provider.version}/#{$config_provider.bin}-v#{$config_provider.version}-linux.tar.gz"
+    sha256 $config_provider.linux_hash
   end
 
   def install
