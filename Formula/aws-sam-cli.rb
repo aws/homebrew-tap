@@ -6,7 +6,7 @@ class AwsSamCli < Formula
 
   config_provider = ConfigProvider.new('aws-sam-cli')
 
-  desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications"
+  desc "aws-sam-cli 🐿 is a tool for local development and testing of Serverless apps"
   homepage "https://github.com/awslabs/aws-sam-cli/"
   url config_provider.url()
   sha256 config_provider.sha256
