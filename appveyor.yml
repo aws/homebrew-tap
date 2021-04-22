@@ -23,7 +23,7 @@ for:
     before_build:
       # Installing linuxbrew and putting it in path.
       - export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
-      - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+      - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   -
     matrix:
       only:
