@@ -5,8 +5,8 @@
   "bottle": {
     "root_url": "https://github.com/awslabs/amazon-qldb-shell/releases/download/",
     "sha256": {
-      "sierra": "ca108dc94dc2f4044b21a2bc91dac1fd32d7f395e3919c2aa4967142a1556dd0",
-      "linux": "7058bb487eb8a0c2acbe434df9f17fdbbd1f6ad39f26f1415067d018cad265dc"
+      "sierra": "d13a23d4157d3760c3532ff2ca352a4e48202dadf70ddcb323a7b8c4f057e6e8",
+      "linux": "00ed468820255f6dce8872f81c4d037987da73a1612f46e0555c81bec208cca6"
     }
   }
 }
