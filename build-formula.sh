@@ -21,7 +21,7 @@ function check_and_install_brew_pkg() {
   if [[ ! -z $(command -v ${pkg}) ]]; then
     return
   fi
-  brew install ${pkg}
+  brew install "$@"
 }
 
 USAGE=$(cat << 'EOM'
@@ -112,7 +112,8 @@ elif [[ ${LOCAL_FORK} -eq 1 ]]; then
 fi
 
 brew tap "${TAP}" || :
-check_and_install_brew_pkg rename
+brew install perl@5.18
+check_and_install_brew_pkg rename --ignore-dependencies
 check_and_install_brew_pkg jq
 
 
