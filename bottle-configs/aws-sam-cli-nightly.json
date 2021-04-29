@@ -5,7 +5,7 @@
     "name": "aws-sam-cli-nightly",
     "bin": "sam-nightly",
     "bottle": {
-        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/sam-cli-beta-cdk",
+        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/sam-cli-nightly",
         "sha256": {
             "sierra": "d09ee5d400560e3cff1a8464620997416865b1725ef2886b8cfa617fe41a3909",
             "linux": "144b6474664a95a89a1e0ab74efa0ca57906c2f4bd2c5576aebdf422e12c722f"
