@@ -34,7 +34,7 @@ for:
 
 # Building bottles shell script.
 build_script:
-  - ./build-formula.sh -f Formula/aws-sam-cli-cdk-beta.rb
+  - ./build-formula.sh -f Formula/aws-sam-cli-beta-cdk.rb
 
 artifacts:
   - path: "build/*.bottle.tar.gz"
