@@ -1,0 +1,14 @@
+{
+    "version": "1.22.0.dev202101010000",
+    "url": "https://api.github.com/repos/aws/aws-sam-cli/tarball/v1.22.0.dev202101010000",
+    "sha256": "2b6d2d535319bb76af18acb781d1ab42119717cec8762daad34660398e90eac9",
+    "name": "aws-sam-cli-beta-cdk",
+    "bin": "sam-beta-cdk",
+    "bottle": {
+        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/sam-cli-beta-cdk",
+        "sha256": {
+            "sierra": "241fa74b70d354f36641b8653973da93aa06d730a22acb3386ab6ed4e1297bfd",
+            "linux": "c6b2f69e85e9ccd22ad19540b7496849e6d8c269286079c442bceeb94fa74a2d"
+        }
+    }
+}
