@@ -7,8 +7,8 @@
     "bottle": {
         "root_url": "https://github.com/aws/aws-sam-cli/releases/download/sam-cli-beta-cdk",
         "sha256": {
-            "sierra": "241fa74b70d354f36641b8653973da93aa06d730a22acb3386ab6ed4e1297bfd",
-            "linux": "c6b2f69e85e9ccd22ad19540b7496849e6d8c269286079c442bceeb94fa74a2d"
+            "sierra": "f806ba87f3cb7c4eda988c6cd0b4697be60b11282831b379ff28183a3ebb3792",
+            "linux": "e6dc24b4cb04ef5069b923a1e3d10f3f148b5671a39a28eebd8a878410fbfe54"
         }
     }
 }
