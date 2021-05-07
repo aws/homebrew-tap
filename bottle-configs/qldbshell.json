@@ -1,12 +1,12 @@
 {
   "name": "qldbshell",
-  "version": "2.0.0-alpha4",
+  "version": "2.0.0-alpha9",
   "bin": "qldb",
   "bottle": {
     "root_url": "https://github.com/awslabs/amazon-qldb-shell/releases/download/",
     "sha256": {
-      "sierra": "d13a23d4157d3760c3532ff2ca352a4e48202dadf70ddcb323a7b8c4f057e6e8",
-      "linux": "00ed468820255f6dce8872f81c4d037987da73a1612f46e0555c81bec208cca6"
+      "sierra": "849fa91d77a37bfa95d48ebb0da35fb86dc30fb2f2ebb215f7987331e6d784a4",
+      "linux": "6339c4ed7b4c686f375f35236d70d233c5a0981282e8fc91a9b8a8c6d81b72fd"
     }
   }
 }
