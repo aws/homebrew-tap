@@ -1,15 +1,15 @@
 require_relative "../ConfigProvider/config_provider"
 
-class AwsSamCli < Formula
+class AwsSamCliNightly < Formula
   include Language::Python::Virtualenv
 
-  config_provider = ConfigProvider.new("aws-sam-cli")
+  config_provider = ConfigProvider.new("aws-sam-cli-nightly")
 
-  desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications"
-  homepage "https://github.com/awslabs/aws-sam-cli/"
+  desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications. This is a pre-release version of AWS SAM CLI"
+  homepage "https://github.com/aws/aws-sam-cli/"
   url config_provider.url
   sha256 config_provider.sha256
-  head "https://github.com/awslabs/aws-sam-cli.git", branch: "develop"
+  head "https://github.com/aws/aws-sam-cli.git", branch: "nightly-builds"
 
   bottle do
     root_url config_provider.root_url
@@ -19,17 +19,17 @@ class AwsSamCli < Formula
 
   depends_on "python@3.8"
 
-  conflicts_with "aws-sam-cli-rc", because: "both install the 'sam' binary"
-
   def install
     venv = virtualenv_create(libexec, "python3.8")
     system libexec/"bin/pip", "install", "--upgrade", "pip"
-    system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
+    system libexec/"bin/pip", "install", "-v", "--pre", "--ignore-installed", buildpath
     system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
+    # bin folder is not created automatically
+    bin.mkpath
     venv.pip_install_and_link buildpath
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/sam --help")
+    assert_match "Usage", shell_output("#{bin}/sam-nightly --help")
   end
 end

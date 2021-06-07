@@ -21,7 +21,7 @@ function check_and_install_brew_pkg() {
   if [[ ! -z $(command -v ${pkg}) ]]; then
     return
   fi
-  brew install ${pkg}
+  brew install "$@"
 }
 
 USAGE=$(cat << 'EOM'
@@ -112,7 +112,8 @@ elif [[ ${LOCAL_FORK} -eq 1 ]]; then
 fi
 
 brew tap "${TAP}" || :
-check_and_install_brew_pkg rename
+brew install perl@5.18
+check_and_install_brew_pkg rename --ignore-dependencies
 check_and_install_brew_pkg jq
 
 
@@ -152,7 +153,7 @@ if [[ $(grep -c 'bottle :unneeded' "${FORMULA_FILE}") -eq 0 ]]; then
   brew install ${RELEASE_FILE}
 fi
 
-BUILT_BOTTLE_VERSION="$(${BIN_NAME} --version | grep -Eo '[0-9]+\.[0-9]+\.[0-9a-zA-Z]+')"
+BUILT_BOTTLE_VERSION="$(${BIN_NAME} --version | grep -Eo '[0-9]+\.[0-9]+\.[0-9a-zA-Z\.]+')"
 if [[ "${BOTTLE_ASSET_VERSION}" != "${BUILT_BOTTLE_VERSION}" ]]; then
     echo "❌ [${BOTTLE}]: Version check failed. Expected: ${BOTTLE_ASSET_VERSION}, Received: ${BUILT_BOTTLE_VERSION} ❌"
     exit 1
