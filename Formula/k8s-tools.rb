@@ -1,4 +1,4 @@
-class ContainerTools < Formula
+class K8sTools < Formula
     desc "Meta Package for common Kubernetes tools"
     version "1.0.0"
     homepage "https://github.com/aws/"
