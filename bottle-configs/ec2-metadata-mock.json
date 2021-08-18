@@ -5,6 +5,7 @@
     "bottle": {
         "root_url": "https://github.com/aws/amazon-ec2-metadata-mock/releases/download/v1.9.0/ec2-metadata-mock",
         "sha256": {
+            "arm64_big_sur": "",
             "sierra": "1a11c2ae86056e389294108d2a6afc320d6ec513845267e1ad4e57d3614926b6",
             "linux": "eadab63d414c8026d26f30c2938d60daea6a615db04647f96123a18d42e3922c",
             "linux_arm": "598d4b5a7920a9cfa910baaaed8402cb519115ffd006fe56cab952fc4f94ec95"

@@ -46,6 +46,10 @@ class ConfigProvider
         @config_data['bottle']['sha256']['sierra']
     end
 
+    def arm64_big_sur_hash
+        @config_data['bottle']['sha256']['arm64_big_sur']
+    end
+
     def linux_hash
         @config_data['bottle']['sha256']['linux']
     end
