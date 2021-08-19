@@ -5,7 +5,7 @@ class Ec2InstanceSelector < Formula
 
   $config_provider = ConfigProvider.new('ec2-instance-selector')
 
-  desc "EC2 Instance Selector is a tool filter EC2 instance types based on resource criteria"
+  desc "EC2 Instance Selector is a tool to filter EC2 instance types based on resource criteria"
   homepage "https://github.com/aws/amazon-ec2-instance-selector/"
   version $config_provider.version
   bottle :unneeded
