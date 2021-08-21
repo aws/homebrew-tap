@@ -11,8 +11,13 @@ class Ec2MetadataMock < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "#{$config_provider.root_url}-darwin-amd64.tar.gz"
-    sha256 $config_provider.sierra_hash
+    if Hardware::CPU.intel?
+      url "#{$config_provider.root_url}-darwin-amd64.tar.gz"
+      sha256 $config_provider.sierra_hash
+    elsif Hardware::CPU.arm?
+      url "#{$config_provider.root_url}-darwin-arm64.tar.gz"
+      sha256 $config_provider.arm64_big_sur_hash
+    end
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "#{$config_provider.root_url}-linux-amd64.tar.gz"
