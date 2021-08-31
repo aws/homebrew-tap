@@ -30,7 +30,7 @@ for:
         - image: macos-mojave
 
     before_build:
-      - /usr/bin/python3 -m pip install --upgrade pip
+      - python3 -m pip install --upgrade pip
       - echo "Mac don't need any before_build steps."
 
 # Building bottles shell script.
