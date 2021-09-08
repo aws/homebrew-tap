@@ -18,7 +18,7 @@ class EksAnywhere < Formula
       end
     end
 
-    depends_on "weaveworks/tap/eksctl"
+    depends_on "eksctl"
 
     def install
       bin.install "eksctl-anywhere"
