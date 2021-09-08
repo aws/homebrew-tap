@@ -5,7 +5,7 @@
     "bottle": {
         "root_url": "https://github.com/aws/copilot-cli/releases/download/v1.10.1/copilot_1.10.1_",
         "sha256": {
-            "arm64_big_sur": "",
+            "arm64_big_sur": "468ac679237eb6c8cc54660373f8e28904b3baa8263191cec011af0c850f2285",
             "sierra": "a95c5b280c4e73870668c1386d28a6f6c59db44c77e56f8196b45cd2695f2ac9",
             "linux": "ffb7419c21a742d19fde9138cdfd7129f7df015acd4e0df6d09f1eacf8cb5547"
         }
