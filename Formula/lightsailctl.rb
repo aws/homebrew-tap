@@ -14,7 +14,16 @@ class Lightsailctl < Formula
 
     depends_on "go" => :build
 
+    option "with-goproxy-direct",
+           "Obtain source code of lightsailctl's dependencies directly\n\t" + 
+           "from the respective version control systems, bypassing\n\t" +
+           "proxy.golang.org module proxy"
+
     def install
+        if build.with? "goproxy-direct"
+            ENV["GOPROXY"] = "direct"
+        end
+
         system "go", "build", "-trimpath", "-o", bin/$config_provider.bin, "main.go"
     end
 
