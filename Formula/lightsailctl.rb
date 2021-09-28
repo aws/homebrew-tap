@@ -15,7 +15,7 @@ class Lightsailctl < Formula
     depends_on "go" => :build
 
     def install
-        system "go", "build", "-trimpath", "-o", bin/$config_provider.bin, "cmd/lightsailctl/main.go"
+        system "go", "build", "-trimpath", "-o", bin/$config_provider.bin, "main.go"
     end
 
     test do
