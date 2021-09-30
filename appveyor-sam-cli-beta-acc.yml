@@ -1,0 +1,40 @@
+version: 1.0.{build}
+
+branches:
+  # whitelist
+  only:
+    - accelerate
+
+image:
+  - macos-mojave
+  - Ubuntu1804
+
+# scripts that are called at very beginning, before repo cloning
+init:
+  - git config --global core.autocrlf input
+
+# scripts that run after cloning repository
+for:
+  -
+    matrix:
+      only:
+        - image: Ubuntu1804
+
+    before_build:
+      # Installing linuxbrew and putting it in path.
+      - export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+      - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+  -
+    matrix:
+      only:
+        - image: macos-mojave
+
+    before_build:
+      - echo "Mac don't need any before_build steps."
+
+# Building bottles shell script.
+build_script:
+  - ./build-formula.sh -f Formula/aws-sam-cli-beta-acc.rb
+
+artifacts:
+  - path: "build/*.bottle.tar.gz"
