@@ -1,6 +1,6 @@
 {
   "name": "qldbshell",
-  "version": "2.0.0-alpha14",
+  "version": "2.0.0",
   "bin": "qldb",
   "bottle": {
     "root_url": "https://github.com/awslabs/amazon-qldb-shell/releases/download/",
