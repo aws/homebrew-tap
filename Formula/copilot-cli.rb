@@ -7,7 +7,6 @@ class CopilotCli < Formula
     desc "Copilot CLI - build, release and operate your container apps on AWS"
     homepage "https://aws.github.io/copilot-cli/"
     version $config_provider.version
-    bottle :unneeded
 
     if OS.mac?
       if Hardware::CPU.intel?
