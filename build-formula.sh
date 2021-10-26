@@ -143,7 +143,7 @@ if [[ $(grep -c 'bottle :unneeded' "${FORMULA_FILE}") -eq 0 ]]; then
   # add debug statements for linux brew bottle issue
   ls ${BUILD_DIR}
   # add debug statements for linux brew bottle issue
-  for f in *.bottle.*; do mv "$f" "$(echo "$f" | sed s/--/-/)"; done # replacing `--` with `-`
+  for f in ${BUILD_DIR}/*.bottle.*; do mv "$f" "$(echo "$f" | sed s/--/-/)"; done # replacing `--` with `-`
   ls ${BUILD_DIR}
   RELEASE_FILE=$(echo ${RELEASE_FILE} | sed 's/--/-/')
 
