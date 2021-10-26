@@ -112,8 +112,6 @@ elif [[ ${LOCAL_FORK} -eq 1 ]]; then
 fi
 
 brew tap "${TAP}" || :
-brew install perl@5.34
-check_and_install_brew_pkg rename --ignore-dependencies
 check_and_install_brew_pkg jq
 
 
@@ -143,11 +141,10 @@ if [[ $(grep -c 'bottle :unneeded' "${FORMULA_FILE}") -eq 0 ]]; then
   RELEASE_FILE="$(ls ${BUILD_DIR}/${BOTTLE}--*.bottle.tar.gz)"
   # Renaming aws-sam-cli--0.37.0.sierra.bottle.tar.gz to aws-sam-cli-0.37.0.sierra.bottle.tar.gz
   # add debug statements for linux brew bottle issue
-  echo ${BUILD_DIR}
   ls ${BUILD_DIR}
-  echo $(which perl)
   # add debug statements for linux brew bottle issue
-  rename 's/--/-/' ${BUILD_DIR}/*.bottle.* # replacing `--` with `-`
+  for f in *.bottle.*; do mv "$f" "$(echo "$f" | sed s/--/-/)"; done # replacing `--` with `-`
+  ls ${BUILD_DIR}
   RELEASE_FILE=$(echo ${RELEASE_FILE} | sed 's/--/-/')
 
   echo "[${BOTTLE}]: Brew bottles are built. Validating them now."
