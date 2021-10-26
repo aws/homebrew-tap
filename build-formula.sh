@@ -112,7 +112,7 @@ elif [[ ${LOCAL_FORK} -eq 1 ]]; then
 fi
 
 brew tap "${TAP}" || :
-brew install perl@5.18
+brew install perl@5.34
 check_and_install_brew_pkg rename --ignore-dependencies
 check_and_install_brew_pkg jq
 
