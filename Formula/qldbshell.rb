@@ -8,7 +8,6 @@ class Qldbshell < Formula
   desc "A CLI for interacting with QLDB ledgers"
   homepage "https://github.com/awslabs/amazon-qldb-shell"
   version $config_provider.version
-  bottle :unneeded
 
   if OS.mac?
     # e.g. https://github.com/awslabs/amazon-qldb-shell/releases/download/v2.0.9/qldb-v2.0.9-mac.tar.gz
