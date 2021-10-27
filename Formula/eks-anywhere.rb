@@ -2,7 +2,6 @@ class EksAnywhere < Formula
   desc "CLI for managing EKS Anywhere Kubernetes clusters"
   homepage "https://github.com/aws/eks-anywhere"
   version "0.5.0"
-  bottle :unneeded
 
   if OS.mac?
     url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/1/artifacts/eks-a/v0.5.0/darwin/eksctl-anywhere-v0.5.0-darwin-amd64.tar.gz"

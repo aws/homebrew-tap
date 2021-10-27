@@ -8,7 +8,6 @@ class Ec2MetadataMock < Formula
   desc "EC2 Metadata Mock is a testing tool to mock out the EC2 Instance Metadata Service"
   homepage "https://github.com/aws/amazon-ec2-metadata-mock/"
   version $config_provider.version
-  bottle :unneeded
 
   if OS.mac?
     if Hardware::CPU.intel?

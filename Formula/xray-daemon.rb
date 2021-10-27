@@ -8,7 +8,6 @@ class XrayDaemon < Formula
   desc "The AWS X-Ray daemon listens for traffic on UDP port 2000, gathers raw segment data, and relays it to the AWS X-Ray API."
   homepage "https://github.com/aws/aws-xray-daemon/"
   version $config_provider.version
-  bottle :unneeded
 
   if OS.mac?
     url "#{$config_provider.root_url}/aws-xray-daemon-macos-#{$config_provider.version}.zip"

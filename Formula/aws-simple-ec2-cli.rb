@@ -8,7 +8,6 @@ class AwsSimpleEc2Cli < Formula
   desc "AWS Simple EC2 CLI is a tool that simplifies the process of launching, connecting and terminating an EC2 instance"
   homepage "https://github.com/awslabs/aws-simple-ec2-cli/"
   version $config_provider.version
-  bottle :unneeded
 
   if OS.mac?
     url "#{$config_provider.root_url}-darwin-amd64.tar.gz"

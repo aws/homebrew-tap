@@ -8,7 +8,6 @@ class EmrOnEksCustomImage < Formula
   desc "Amazon EMR on EKS Custom Image CLI"
   homepage "https://github.com/awslabs/amazon-emr-on-eks-custom-image-cli"
   version $config_provider.version
-  bottle :unneeded
   license "Apache-2.0"
 
   if OS.mac?
