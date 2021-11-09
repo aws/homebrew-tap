@@ -25,6 +25,7 @@ class EksAnywhere < Formula
   end
 
   depends_on "eksctl"
+  depends_on "kubernetes-cli"
 
   def install
     bin.install "eksctl-anywhere"
