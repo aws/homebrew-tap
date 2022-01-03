@@ -6,8 +6,8 @@ branches:
     - nightly-builds
 
 image:
-  - macos-mojave
-  - Ubuntu1804
+  - macos-bigsur
+  - Ubuntu2004
 
 # scripts that are called at very beginning, before repo cloning
 init:
@@ -18,7 +18,7 @@ for:
   -
     matrix:
       only:
-        - image: Ubuntu1804
+        - image: Ubuntu2004
 
     before_build:
       # Installing linuxbrew and putting it in path.
@@ -27,7 +27,7 @@ for:
   -
     matrix:
       only:
-        - image: macos-mojave
+        - image: macos-bigsur
 
     before_build:
       - echo "Mac don't need any before_build steps."
