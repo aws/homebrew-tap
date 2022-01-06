@@ -13,6 +13,13 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 # Commenting out the auto upgrade since appveyor mac has an old version and fails buildilng bottles for SAM CLI
 # export HOMEBREW_NO_AUTO_UPDATE=1
 
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+    test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>~/.bash_profile
+    echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>~/.profile
+fi
+
 # for update of brew
 brew update
 
@@ -34,6 +41,7 @@ USAGE=$(cat << 'EOM'
 
           Optional:
             -h          Print this usage help
+            -u          Use existing tap instead of untapping and retapping
             -l          Dynamically sets the TAP to the first git remote found that is not the official aws tap
             -t          Specify a sepcific tap   i.e. `-t bwagner5/tap`
 EOM
@@ -41,18 +49,22 @@ EOM
 
 
 LOCAL_FORK=0
+USE_EXISTING_TAP=0
 AWS_TAP="aws/tap"
 USER_TAP=""
 TAP="${AWS_TAP}"
 
 # Process our input arguments
-while getopts "f:hlt:" opt; do
+while getopts "f:hult:" opt; do
   case ${opt} in
     f ) # Full Formula File Path
         FORMULA_FILE="${OPTARG}"
       ;;
     l ) # Local fork
         LOCAL_FORK=1
+      ;;
+    u ) # Use existing tap
+        USE_EXISTING_TAP=1
       ;;
     t ) # tap
         USER_TAP="${OPTARG}"
@@ -79,6 +91,10 @@ BREW_CORE="homebrew/core"
 SAVED_TAPS+=($(brew tap))
 SAVED_TAPS=( "${SAVED_TAPS[@]/$BREW_CORE}" )
 BOTTLE=$(basename ${FORMULA_FILE} .rb)
+
+if [[ ${USE_EXISTING_TAP} -eq 1 ]]; then
+    SAVED_TAPS=( "${SAVED_TAPS[@]/$TAP}" )
+fi
 
 function fail_msg() {
     echo "❌ Failed to build ${FORMULA_FILE} ❌"
@@ -111,7 +127,10 @@ elif [[ ${LOCAL_FORK} -eq 1 ]]; then
   done
 fi
 
-brew tap "${TAP}" || :
+if [[ ${USE_EXISTING_TAP} -eq 0 ]]; then
+    brew tap "${TAP}" || :
+fi
+
 check_and_install_brew_pkg jq
 
 

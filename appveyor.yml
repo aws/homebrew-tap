@@ -34,7 +34,9 @@ for:
 
 # Building bottles shell script.
 build_script:
-  - ./build-formula.sh -f Formula/aws-sam-cli.rb
+  - brew tap aws/tap
+  - ./update-local-tap.sh
+  - ./build-formula.sh -f Formula/aws-sam-cli.rb -u
 
 artifacts:
   - path: "build/*.bottle.tar.gz"

@@ -1,2 +1,3 @@
 *.bottle.*
 /build/
+.vscode/*
