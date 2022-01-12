@@ -12,12 +12,12 @@ class EmrOnEksCustomImage < Formula
   license "Apache-2.0"
 
   if OS.mac?
-    url "#{$config_provider.root_url}-mac-v1.00.zip"
+    url "#{$config_provider.root_url}-mac-v#{$config_provider.version}.zip"
     sha256 $config_provider.sierra_hash
   end
 
   if OS.linux?
-    url "#{$config_provider.root_url}-linux-v1.00.zip"
+    url "#{$config_provider.root_url}-linux-v#{$config_provider.version}.zip"
     sha256 $config_provider.linux_hash
   end
 
