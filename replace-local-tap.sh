@@ -3,6 +3,9 @@ set -euo pipefail
 
 # Replace local tap with contents of this repo
 
+# Local tap folder name is the full repo name
+# instead of what the tap command uses.
+# Ex: brew tap aws/tap -> aws/homebrew-tap
 TAP_NAME="aws/homebrew-tap"
 TAP_LOCATION=""
 
