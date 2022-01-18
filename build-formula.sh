@@ -13,13 +13,6 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 # Commenting out the auto upgrade since appveyor mac has an old version and fails buildilng bottles for SAM CLI
 # export HOMEBREW_NO_AUTO_UPDATE=1
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-    test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>~/.bash_profile
-    echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>~/.profile
-fi
-
 # for update of brew
 brew update
 
