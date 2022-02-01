@@ -26,6 +26,7 @@ brew install <FORMULA>
 | [aws-simple-ec2-cli](https://github.com/awslabs/aws-simple-ec2-cli) | [formula](Formula/aws-simple-ec2-cli.rb) | CLI tool that simplifies the process of launching, connecting and terminating EC2 instances |
 | [qldbshell](https://github.com/awslabs/amazon-qldb-shell) | [formula](Formula/qldbshell.rb) | A CLI Shell for interacting with and processing queries against AWS QLDB |
 | [emr-on-eks-custom-image](https://github.com/awslabs/amazon-emr-on-eks-custom-image-cli) | [formula](Formula/emr-on-eks-custom-image.rb) | A CLI tool to interact with EMR on EKS custom images.
+| [Litani](https://github.com/awslabs/aws-build-accumulator) | [formula](Formula/litani.rb) | Litani provides platform-independent job control (timeouts, return code control) and an output format that is easy to render into reports
 
 ## Documentation
 
