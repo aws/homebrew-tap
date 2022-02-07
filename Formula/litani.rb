@@ -40,17 +40,18 @@ class Litani < Formula
     venv = virtualenv_create(libexec/"vendor", "python3")
     venv.pip_install resources
 
-    libexec.install Dir["*"] - ["doc", "test", "examples"]
+    libexec.install Dir["*"] - ["test", "examples"]
     (bin/"litani").write_env_script libexec/"litani", PATH: "\"#{libexec}/vendor/bin:${PATH}\""
 
-    cd "doc" do
+    cd libexec/"doc" do
       system libexec/"vendor/bin/python3", "configure"
       system "ninja", "--verbose"
     end
-    man1.install buildpath.glob("doc/out/man/*.1")
-    man5.install buildpath.glob("doc/out/man/*.5")
-    man7.install buildpath.glob("doc/out/man/*.7")
-    doc.install "doc/out/html/index.html"
+    man1.install libexec.glob("doc/out/man/*.1")
+    man5.install libexec.glob("doc/out/man/*.5")
+    man7.install libexec.glob("doc/out/man/*.7")
+    doc.install libexec/"doc/out/html/index.html"
+    rm_rf libexec/"doc"
   end
 
   test do
