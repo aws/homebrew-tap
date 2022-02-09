@@ -3,8 +3,8 @@ class Litani < Formula
 
   desc "Metabuild system"
   homepage "https://awslabs.github.io/aws-build-accumulator/"
-  url "https://github.com/awslabs/aws-build-accumulator/archive/refs/tags/1.19.0.tar.gz"
-  sha256 "1b15b076e4af7c1bd057d52a7b7c9f4101f9d40581f16f089ad6b9863b35b4fa"
+  url "https://github.com/ronakfof/aws-build-accumulator/archive/refs/tags/4.1.6.tar.gz"
+  sha256 "5ec0458bc04e68a5bfd527354ae2ef6f5d7f47e7a099ec24ca587387a542d9b9"
   license "Apache-2.0"
 
   depends_on "coreutils" => :build
