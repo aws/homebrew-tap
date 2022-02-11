@@ -3,8 +3,9 @@ class Litani < Formula
 
   desc "Metabuild system"
   homepage "https://awslabs.github.io/aws-build-accumulator/"
-  url "https://github.com/awslabs/aws-build-accumulator/archive/refs/tags/1.19.0.tar.gz"
-  sha256 "1b15b076e4af7c1bd057d52a7b7c9f4101f9d40581f16f089ad6b9863b35b4fa"
+  url "https://github.com/awslabs/aws-build-accumulator.git",
+      tag:      "1.19.0",
+      revision: "8b58d19d91b665b1b52f6f6228d49d0866d4a13c"
   license "Apache-2.0"
 
   depends_on "coreutils" => :build
@@ -23,11 +24,6 @@ class Litani < Formula
   resource "MarkupSafe" do
     url "https://files.pythonhosted.org/packages/bf/10/ff66fea6d1788c458663a84d88787bae15d45daa16f6b3ef33322a51fc7e/MarkupSafe-2.0.1.tar.gz"
     sha256 "594c67807fb16238b30c44bdf74f36c02cdf22d1c8cda91ef8a0ed8dabf5620a"
-  end
-
-  resource "voluptuous" do
-    url "https://files.pythonhosted.org/packages/c0/2c/ccbeb25364e3e0c5e4522f13d66e2fc639bb4d4ecdf73be0959552cbecb4/voluptuous-0.12.2.tar.gz"
-    sha256 "4db1ac5079db9249820d49c891cb4660a6f8cae350491210abce741fabf56513"
   end
 
   resource "PyYAML" do
