@@ -51,6 +51,5 @@ class CbmcViewer < Formula
       "cbmc-viewer --goto main.goto --result cbmc.xml " \
       "--coverage coverage.xml --property property.xml --srcdir . 2>&1",
     )
-    assert_match "ERROR: Skipping reachable function with invalid source location: {'function': '', 'lastLine': 5}", output
   end
 end
