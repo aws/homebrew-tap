@@ -7,6 +7,7 @@ class CbmcViewer < Formula
       revision: "3049a3451d9c5651c7be1596ddaa69e0051f83c8"
   license "Apache-2.0"
 
+  depends_on "cbmc" => :test
   depends_on "python@3.9"
   depends_on "universal-ctags"
 
@@ -30,6 +31,26 @@ class CbmcViewer < Formula
   end
 
   test do
-    system "which", "cbmc-viewer"
+    (testpath/"main.c").write <<~EOS
+      #include <stdlib.h>
+
+      static int global;
+
+      int main() {
+        int *ptr = malloc(sizeof(int));
+        assert(global > 0);
+        return 0;
+      }
+    EOS
+
+    system "goto-cc", "-o", "main.goto", testpath/"main.c"
+    shell_output("cbmc main.goto --trace --xml-ui > cbmc.xml", 10)
+    shell_output("cbmc main.goto --cover location --xml-ui > coverage.xml")
+    shell_output("cbmc main.goto --show-properties --xml-ui > property.xml")
+    output = shell_output(
+      "cbmc-viewer --goto main.goto --result cbmc.xml " \
+      "--coverage coverage.xml --property property.xml --srcdir . 2>&1",
+    )
+    assert_match "ERROR: Skipping reachable function with invalid source location: {'function': '', 'lastLine': 5}", output
   end
 end
