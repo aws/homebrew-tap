@@ -27,6 +27,7 @@ brew install <FORMULA>
 | [qldbshell](https://github.com/awslabs/amazon-qldb-shell) | [formula](Formula/qldbshell.rb) | A CLI Shell for interacting with and processing queries against AWS QLDB |
 | [emr-on-eks-custom-image](https://github.com/awslabs/amazon-emr-on-eks-custom-image-cli) | [formula](Formula/emr-on-eks-custom-image.rb) | A CLI tool to interact with EMR on EKS custom images.
 | [litani](https://github.com/awslabs/aws-build-accumulator) | [formula](Formula/litani.rb) | Litani provides platform-independent job control (timeouts, return code control) and an output format that is easy to render into reports
+| [cbmc-viewer](https://github.com/awslabs/aws-viewer-for-cbmc) | [formula](Formula/cbmc-viewer.rb) | CBMC Viewer scans the output of CBMC and produces a summary that can be opened in any web browser to understand and debug CBMC findings.
 
 ## Documentation
 
