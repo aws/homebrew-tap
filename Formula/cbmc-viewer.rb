@@ -47,7 +47,7 @@ class CbmcViewer < Formula
     shell_output("cbmc main.goto --trace --xml-ui > cbmc.xml", 10)
     shell_output("cbmc main.goto --cover location --xml-ui > coverage.xml")
     shell_output("cbmc main.goto --show-properties --xml-ui > property.xml")
-    output = shell_output(
+    shell_output(
       "cbmc-viewer --goto main.goto --result cbmc.xml " \
       "--coverage coverage.xml --property property.xml --srcdir . 2>&1",
     )
