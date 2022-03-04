@@ -44,12 +44,14 @@ class CbmcViewer < Formula
     EOS
 
     system "goto-cc", "-o", "main.goto", testpath/"main.c"
-    shell_output("cbmc main.goto --trace --xml-ui > cbmc.xml", 10)
-    shell_output("cbmc main.goto --cover location --xml-ui > coverage.xml")
-    shell_output("cbmc main.goto --show-properties --xml-ui > property.xml")
-    shell_output(
-      "cbmc-viewer --goto main.goto --result cbmc.xml " \
-      "--coverage coverage.xml --property property.xml --srcdir . 2>&1",
-    )
+    (testpath/"cbmc.xml").write shell_output("cbmc main.goto --trace --xml-ui", 10)
+    (testpath/"coverage.xml").write shell_output("cbmc main.goto --cover location --xml-ui")
+    (testpath/"property.xml").write shell_output("cbmc main.goto --show-properties --xml-ui")
+    system bin/"cbmc-viewer", "--goto", "main.goto",
+                              "--result", "cbmc.xml",
+                              "--coverage", "coverage.xml",
+                              "--property", "property.xml",
+                              "--srcdir", "."
+    assert_predicate testpath/"result/html/index.html", :exist?
   end
 end
