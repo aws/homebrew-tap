@@ -43,7 +43,7 @@ class CbmcViewer < Formula
       }
     EOS
 
-    system "goto-cc", "-o", "main.goto", testpath/"main.c"
+    system "goto-cc", "-o", "main.goto", "main.c"
     (testpath/"cbmc.xml").write shell_output("cbmc main.goto --trace --xml-ui", 10)
     (testpath/"coverage.xml").write shell_output("cbmc main.goto --cover location --xml-ui")
     (testpath/"property.xml").write shell_output("cbmc main.goto --show-properties --xml-ui")
@@ -52,6 +52,6 @@ class CbmcViewer < Formula
                               "--coverage", "coverage.xml",
                               "--property", "property.xml",
                               "--srcdir", "."
-    assert_predicate testpath/"result/html/index.html", :exist?
+    assert_predicate testpath/"report/html/index.html", :exist?
   end
 end
