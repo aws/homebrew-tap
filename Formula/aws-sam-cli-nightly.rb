@@ -22,7 +22,7 @@ class AwsSamCliNightly < Formula
   def install
     venv = virtualenv_create(libexec, "python3.8")
     system libexec/"bin/pip", "install", "--upgrade", "pip"
-    system libexec/"bin/pip", "install", "-v", "--pre", "--ignore-installed", buildpath
+    system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
     system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
     # bin folder is not created automatically
     bin.mkpath
