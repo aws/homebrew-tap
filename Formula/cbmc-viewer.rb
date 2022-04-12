@@ -9,9 +9,9 @@ class CbmcViewer < Formula
 
   bottle do
     root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-2.14"
-    sha256 cellar: :any_skip_relocation, big_sur:      "b717705457917d46dde231921e668c1c649bb64ee6f33a6a2e55de8234372e22"
-    sha256 cellar: :any_skip_relocation, catalina:     "9418be981e8a37177bcd5707f5f3938fe6508ac889e115db6e861571bf5d4e68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e1a1a85ec6a8edbbb74a9e565bc403e385f44af34f27612dca4cfe5dadba820a"
+    sha256 cellar: :any_skip_relocation, big_sur:      "9b9e3c8414768562f2d090094963bc794c42b3aa90c9c51b7a2782f6597c72dd"
+    sha256 cellar: :any_skip_relocation, catalina:     "65b037122d07d02ece55346fe1233843c925bb1d89ab4aae3a45023143788cc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "088386660d250e2e510cd49c43a56e27c42976d8f3ce7cafc672a24d7d11b520"
   end
 
   depends_on "cbmc" => :test
