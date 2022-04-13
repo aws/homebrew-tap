@@ -1,7 +1,7 @@
 class CbmcStarterKit < Formula
   include Language::Python::Virtualenv
   desc "Templates for writing CBMC proofs for C code"
-  homepage "https://github.com/awslabs/aws-viewer-for-cbmc"
+  homepage "https://github.com/model-checking/cbmc-starter-kit"
   url "https://github.com/model-checking/cbmc-starter-kit",
       tag:      "starterkit-1.0",
       revision: "4ef675178c8c7402d21d1b548b4ba3508fe3dbf3"
