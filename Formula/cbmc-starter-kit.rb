@@ -1,9 +1,11 @@
 class CbmcStarterKit < Formula
   include Language::Python::Virtualenv
+
   desc "Templates for writing CBMC proofs for C code"
   homepage "https://github.com/model-checking/cbmc-starter-kit"
-  url "https://github.com/model-checking/cbmc-starter-kit/archive/refs/tags/starterkit-2.0.tar.gz"
-  sha256 "ef121dbe8977cd318d180630f77f1010a1dcc5e88da1fc333c9d5f3c68f4b7f2"
+  url "https://github.com/model-checking/cbmc-starter-kit.git",
+      tag:      "starterkit-2.0",
+      revision: "158633b1a90229cba2cfd31c2fc5e05ef2699880"
   license "MIT-0"
 
   depends_on "python@3.9"
