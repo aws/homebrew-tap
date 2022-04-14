@@ -2,13 +2,12 @@ class CbmcStarterKit < Formula
   include Language::Python::Virtualenv
   desc "Templates for writing CBMC proofs for C code"
   homepage "https://github.com/model-checking/cbmc-starter-kit"
-  url "https://github.com/model-checking/cbmc-starter-kit",
-      tag:      "starterkit-1.0",
-      revision: "4ef675178c8c7402d21d1b548b4ba3508fe3dbf3"
+  url "https://github.com/model-checking/cbmc-starter-kit/archive/refs/tags/starterkit-2.0.tar.gz"
+  sha256 "ef121dbe8977cd318d180630f77f1010a1dcc5e88da1fc333c9d5f3c68f4b7f2"
   license "MIT-0"
 
   depends_on "python@3.9"
-  
+
   resource "gitdb" do
     url "https://files.pythonhosted.org/packages/fc/44/64e02ef96f20b347385f0e9c03098659cb5a1285d36c3d17c56e534d80cf/gitdb-4.0.9.tar.gz"
     sha256 "bac2fd45c0a1c9cf619e63a90d62bdc63892ef92387424b855792a6cabe789aa"
