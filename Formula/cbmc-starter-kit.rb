@@ -30,6 +30,6 @@ class CbmcStarterKit < Formula
   end
 
   test do
-    system "python3", "-c", "cbmc-starter-kit-update --version"
+    system bin/"cbmc-starter-kit-update --version"
   end
 end
