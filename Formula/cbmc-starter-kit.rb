@@ -8,6 +8,13 @@ class CbmcStarterKit < Formula
       revision: "82432f13ebf0f50baeff72b04faf65035dbb11db"
   license "MIT-0"
 
+  bottle do
+    root_url "https://github.com/model-checking/cbmc-starter-kit/releases/download/starterkit-2.0.2"
+    sha256 cellar: :any_skip_relocation, big_sur:      "dc6edec1c9cec486ff99dfc70f86acc592c775487a0e99b9546d66da45d591f8"
+    sha256 cellar: :any_skip_relocation, catalina:     "8e5bbe807f876f434561a3e33bb3d1038e126f507d7023d36d081b14b1babd38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b8160492667c3afd2403d07b00f2876c99b071e92bfa262505b5da2dd2e6f24a"
+  end
+
   depends_on "python@3.9"
 
   resource "gitdb" do
