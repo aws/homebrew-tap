@@ -34,7 +34,7 @@ class CbmcStarterKit < Formula
 
   def install
     virtualenv_install_with_resources
-    bash_completion.install "etc/bash_completion.d/cbmc-starter-kit.sh"
+    bash_completion.install "src/cbmc_starter_kit/etc/bash_completion.d/cbmc-starter-kit.sh"
   end
 
   test do
