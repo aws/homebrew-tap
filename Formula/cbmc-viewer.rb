@@ -35,6 +35,7 @@ class CbmcViewer < Formula
 
   def install
     virtualenv_install_with_resources
+    bash_completion.install "etc/bash_completion.d/cbmc-viewer.sh"
   end
 
   test do
