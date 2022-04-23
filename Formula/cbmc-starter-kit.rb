@@ -4,12 +4,12 @@ class CbmcStarterKit < Formula
   desc "Templates for writing CBMC proofs for C code"
   homepage "https://github.com/model-checking/cbmc-starter-kit"
   url "https://github.com/model-checking/cbmc-starter-kit.git",
-      tag:      "starterkit-2.0.3",
-      revision: "789a974d0701eb292fb8f5c94a6cbab2c3835661"
+      tag:      "starterkit-2.1.1",
+      revision: "2e4f3473006d9d3359947c15ca1087c73fbc6070"
   license "MIT-0"
 
   bottle do
-    root_url "https://github.com/model-checking/cbmc-starter-kit/releases/download/starterkit-2.0.3"
+    root_url "https://github.com/model-checking/cbmc-starter-kit/releases/download/starterkit-2.1.1"
     sha256 cellar: :any_skip_relocation, big_sur:      "2652e1076dadfa691b1851c8934460cb91bfef16bedb4d3e42700434f686012a"
     sha256 cellar: :any_skip_relocation, catalina:     "703f4b5157337be1ef08fc1eb0ed5fee3d8a5356bdc91c87b651de155b04a1fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0e6f66a497dbc8f6860f3b5486f01f7fcacef0335f6f5e6c5097b61ce7895750"
