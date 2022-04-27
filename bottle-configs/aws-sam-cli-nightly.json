@@ -7,8 +7,8 @@
     "bottle": {
         "root_url": "https://github.com/aws/aws-sam-cli/releases/download/sam-cli-nightly",
         "sha256": {
-            "sierra": "5757c1f400570bd30838174243fb7932939ad5bcf55f596134a4b1d48e57e461",
-            "linux": "87ba3bd5f46fea0785f2f9c90907ada7a9f3fc0d3ad3ec4f1a0ba477d85ccffa"
+            "sierra": "f53b532d02a1fe00d1024f9695ba55d4f5895e5d372d3d49f9053121b3635736",
+            "linux": "97c7b399a30b22c4d1d3de8ffab4c5c73e68ef18e66f72c027cce77d248b541a"
         }
     }
 }
