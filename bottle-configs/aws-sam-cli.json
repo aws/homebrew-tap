@@ -5,10 +5,10 @@
     "name": "aws-sam-cli",
     "bin": "sam",
     "bottle": {
-        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/v1.46.0/",
+        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/v1.47.0/",
         "sha256": {
-            "sierra": "35e65d4a3a5d16357d8f830249c0fea2679366e44efd4b80d96649741b6c9de3",
-            "linux": "61d287020ef4470648a1c95f7645d1bcaf184d3fbc7cc1b4a3804cb77fc68625"
+            "sierra": "a389f7b417b3f1f426d52a857b688ec3b00c06208ea5b4e79acec5eefdcce626",
+            "linux": "485f2e9c4b6bf6cf4d855dbfc203020a60b46762649df0d1d63beddb19b99c9d"
         }
     }
 }
