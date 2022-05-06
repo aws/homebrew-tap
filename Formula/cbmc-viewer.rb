@@ -3,15 +3,15 @@ class CbmcViewer < Formula
   desc "Scans the output of CBMC and produces a browsable summary of the results"
   homepage "https://github.com/awslabs/aws-viewer-for-cbmc"
   url "https://github.com/awslabs/aws-viewer-for-cbmc.git",
-      tag:      "viewer-3.1",
-      revision: "6f48fe01ea457636d265d6eeb80ff01dcea9e5ea"
+      tag:      "viewer-3.2",
+      revision: "41c90daa79d634ad0cbb2141014ca90e3ae08b12"
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-3.1"
-    sha256 cellar: :any_skip_relocation, big_sur:      "00d3980c4c668ac8c42b5c72d822a5a0e0a2198bfe2c99c810aa70828401512f"
-    sha256 cellar: :any_skip_relocation, catalina:     "70c6c50c5b78de98ae5e63eb6b21deccb9e102db871d09592796b27cc77182f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bd01dff27a291a33acde0c3928890125d9f20c2f1cdffacb49c836ecbd3d39d5"
+    root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-3.2"
+    sha256 cellar: :any_skip_relocation, big_sur:      "1c64d1454166f8bca681ee5d52a3daae2f2bfaa5054e505d304989089ce7e287"
+    sha256 cellar: :any_skip_relocation, catalina:     "3602bf65cc1d7a65f8d0f46f2ffeab69b742b37e804148116a8daa2bebb9a079"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3992e7210f064406b1c6596c64a12b7fa8f5754b0efb3da53f3648cf3bd23cea"
   end
 
   depends_on "cbmc" => :test
