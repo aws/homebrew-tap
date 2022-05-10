@@ -3,20 +3,19 @@ class CbmcViewer < Formula
   desc "Scans the output of CBMC and produces a browsable summary of the results"
   homepage "https://github.com/awslabs/aws-viewer-for-cbmc"
   url "https://github.com/awslabs/aws-viewer-for-cbmc.git",
-      tag:      "viewer-3.0.1",
-      revision: "8dc38024fa95528deddaf9726dbd394911a5d577"
+      tag:      "viewer-3.2",
+      revision: "41c90daa79d634ad0cbb2141014ca90e3ae08b12"
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-3.0.1"
-    sha256 cellar: :any_skip_relocation, big_sur:      "1c64d1454166f8bca681ee5d52a3daae2f2bfaa5054e505d304989089ce7e287"
-    sha256 cellar: :any_skip_relocation, catalina:     "3602bf65cc1d7a65f8d0f46f2ffeab69b742b37e804148116a8daa2bebb9a079"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3992e7210f064406b1c6596c64a12b7fa8f5754b0efb3da53f3648cf3bd23cea"
+    root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-3.2"
+    sha256 cellar: :any_skip_relocation, big_sur:      "77047f7cf33d7226dbc83de8234559247e31ac7369f36e5d13ac1e86412f6c3b"
+    sha256 cellar: :any_skip_relocation, catalina:     "25d97cdb31fb1c3816db33634724bb1f1fd88b354e94b9a1ff50d4316a0346a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b7248388e4ff02baa10eba27793ff0ff007af9afdf7de26e7d430e5c4672f25f"
   end
 
   depends_on "cbmc" => :test
-  depends_on "python@3.9"
-  depends_on "universal-ctags"
+  depends_on "python@3.7"
 
   resource "Jinja2" do
     url "https://files.pythonhosted.org/packages/91/a5/429efc6246119e1e3fbf562c00187d04e83e54619249eb732bb423efa6c6/Jinja2-3.0.3.tar.gz"

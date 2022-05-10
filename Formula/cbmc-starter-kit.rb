@@ -15,7 +15,7 @@ class CbmcStarterKit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "40e5a74e21f02abc41ad2e776ad33c2aa3037df98d164a6c8608af983f74b729"
   end
 
-  depends_on "python@3.9"
+  depends_on "python@3.8"
 
   resource "gitdb" do
     url "https://files.pythonhosted.org/packages/fc/44/64e02ef96f20b347385f0e9c03098659cb5a1285d36c3d17c56e534d80cf/gitdb-4.0.9.tar.gz"
