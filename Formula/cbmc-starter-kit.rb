@@ -10,9 +10,9 @@ class CbmcStarterKit < Formula
 
   bottle do
     root_url "https://github.com/model-checking/cbmc-starter-kit/releases/download/starterkit-2.2"
-    sha256 cellar: :any_skip_relocation, big_sur:      "1d429dbf2971f889196e412d602810ec5378377b1e0c2c7e83641ede93d0b887"
-    sha256 cellar: :any_skip_relocation, catalina:     "69a23852997c26c09ba918e7b1eaa7583025e611cbe028fe49306ab9bd7eb2ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "40e5a74e21f02abc41ad2e776ad33c2aa3037df98d164a6c8608af983f74b729"
+    sha256 cellar: :any_skip_relocation, big_sur:      "83b4083ba38a98be7bc0e7e662581eadb71a21c9a3100e8fea7f15fdcc866255"
+    sha256 cellar: :any_skip_relocation, catalina:     "74decbd827076dbdc308f8127ef56e69460cbf0b57088381ad13bcced6a21be1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0cdc29742a6a08cb3a66d18a232dbbd2496c8a03c2f0a7dfc67ce564dc82158a"
   end
 
   depends_on "python@3.8"
