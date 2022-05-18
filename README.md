@@ -19,6 +19,7 @@ brew install <FORMULA>
 | [copilot-cli](https://github.com/aws/copilot-cli) | [formula](Formula/copilot-cli.rb) | Build, release and operate production ready containerized applications on Amazon ECS |
 | [ec2-instance-selector](https://github.com/aws/amazon-ec2-instance-selector) | [formula](Formula/ec2-instance-selector.rb) | CLI tool and go library which recommends instance types based on resource criteria like vcpus and memory |
 | [ec2-metadata-mock](https://github.com/aws/amazon-ec2-metadata-mock) | [formula](Formula/ec2-metadata-mock.rb) | A tool to simulate Amazon EC2 instance metadata |
+| [ec2-spot-interrupter](https://github.com/aws/amazon-ec2-spot-interrupter) | [formula](Formula/ec2-spot-interrupter.rb) | CLI tool that triggers Amazon EC2 Spot Interruption Notifications and Rebalance Recommendations |
 | [eks-anywhere](https://github.com/aws/eks-anywhere) | [formula](Formula/eks-anywhere.rb) | CLI tool for managing Amazon EKS Anywhere clusters |
 | k8s-tools | [formula](Formula/k8s-tools.rb) | Meta-package to install common Kubernetes tools |
 | [lightsailctl](https://github.com/aws/lightsailctl) | [formula](Formula/lightsailctl.rb) | Amazon Lightsail CLI Extensions |
