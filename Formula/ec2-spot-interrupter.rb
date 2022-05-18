@@ -11,7 +11,7 @@ class Ec2SpotInterrupter < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v0.0.5/ec2-spot-interrupter_0.0.5_Darwin_arm64.tar.gz"
-      sha256 "936910974186ca55cc23ae03f1c1206dd67b6a210dcbbd5bc8be2562e1d9e557"
+      sha256 "6cbd6bd2b50df6dc543f0f27c59320e3fcedb008ca7b059787a604963bb71f31"
 
       def install
         bin.install "ec2-spot-interrupter"
@@ -19,7 +19,7 @@ class Ec2SpotInterrupter < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v0.0.5/ec2-spot-interrupter_0.0.5_Darwin_amd64.tar.gz"
-      sha256 "18402b7c79f3a0581e884ca2c1ed9d64ad842485f2d812e752db4b6a2f4df032"
+      sha256 "d9a4a4afb680928beaae3d2525d555c3c68a310b68309a0936ef2e8336219612"
 
       def install
         bin.install "ec2-spot-interrupter"
@@ -30,7 +30,7 @@ class Ec2SpotInterrupter < Formula
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v0.0.5/ec2-spot-interrupter_0.0.5_Linux_armv6.tar.gz"
-      sha256 "f2d5bc1bc767c600eb417e54ccb26a3595885b337c8894dfe8c2d75262937dbb"
+      sha256 "125f1e8a88835e9af72066d9d81201b2364d1e8e844eaf550b6e7c997ac3b66f"
 
       def install
         bin.install "ec2-spot-interrupter"
@@ -38,7 +38,7 @@ class Ec2SpotInterrupter < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v0.0.5/ec2-spot-interrupter_0.0.5_Linux_amd64.tar.gz"
-      sha256 "a528c1297b31fc27220d1fe09760b50d501dc3229a460394a068febf4aba735c"
+      sha256 "0c5c85dc22767217d2091f2d2de89a8c4fce3b45d2410251d38fabb15231444d"
 
       def install
         bin.install "ec2-spot-interrupter"
