@@ -1,8 +1,8 @@
 class CbmcViewer < Formula
   include Language::Python::Virtualenv
   desc "Scans the output of CBMC and produces a browsable summary of the results"
-  homepage "https://github.com/awslabs/aws-viewer-for-cbmc"
-  url "https://github.com/awslabs/aws-viewer-for-cbmc.git",
+  homepage "https://github.com/model-checking/cbmc-viewer"
+  url "https://github.com/model-checking/cbmc-viewer.git",
       tag:      "viewer-3.2",
       revision: "41c90daa79d634ad0cbb2141014ca90e3ae08b12"
   license "Apache-2.0"
@@ -16,6 +16,7 @@ class CbmcViewer < Formula
 
   depends_on "cbmc" => :test
   depends_on "python@3.7"
+  depends_on "universal-ctags" => :optional
 
   resource "Jinja2" do
     url "https://files.pythonhosted.org/packages/91/a5/429efc6246119e1e3fbf562c00187d04e83e54619249eb732bb423efa6c6/Jinja2-3.0.3.tar.gz"
