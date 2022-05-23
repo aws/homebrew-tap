@@ -15,7 +15,7 @@ class CbmcViewer < Formula
   end
 
   depends_on "cbmc" => :test
-  depends_on "python@3.7"
+  depends_on "python"
   depends_on "universal-ctags" => :optional
 
   resource "Jinja2" do
