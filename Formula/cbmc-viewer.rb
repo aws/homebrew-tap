@@ -3,12 +3,12 @@ class CbmcViewer < Formula
   desc "Scans the output of CBMC and produces a browsable summary of the results"
   homepage "https://github.com/model-checking/cbmc-viewer"
   url "https://github.com/model-checking/cbmc-viewer.git",
-      tag:      "viewer-3.3",
-      revision: "dd7fea375b32283cc5926ef2adf1cc61b8a57830"
+      tag:      "viewer-3.4",
+      revision: "e13c56dd37ca3bc772359eba7ecd215dffe4883e"
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-3.3"
+    root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-3.4"
     sha256 cellar: :any_skip_relocation, big_sur:      "7393f004f430f88ef0df186e6f4a4d3d8ac8c2484b5c8947089ffedb49a9eb4b"
     sha256 cellar: :any_skip_relocation, catalina:     "8bc2ea084c587e66eba4f02528954efada0e314c6a07e285afc60c8f5637dd32"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "630c4818b8fc733143cf0f0a3d61bf2453843a6277b8b0c993723f47e4e773d3"
