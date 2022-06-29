@@ -3,15 +3,15 @@ class CbmcViewer < Formula
   desc "Scans the output of CBMC and produces a browsable summary of the results"
   homepage "https://github.com/model-checking/cbmc-viewer"
   url "https://github.com/model-checking/cbmc-viewer.git",
-      tag:      "viewer-3.4",
-      revision: "e13c56dd37ca3bc772359eba7ecd215dffe4883e"
+      tag:      "viewer-3.5",
+      revision: "1a022d998bdc0d6a591481532f084639090805d9"
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-3.4"
-    sha256 cellar: :any_skip_relocation, big_sur:      "9b68830fc0c58118686cf561e7c22aa65d23b6f2dec7d3aa74d9d1956dc804ca"
-    sha256 cellar: :any_skip_relocation, catalina:     "0b36be0e718e7e88f7221b9714545321fadc0f1674fb43c4186aa1350babbe7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "84a6419840abcce527aad9c035c1191b775ef77026261a796fd6de7ad4be5c44"
+    root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-3.5"
+    sha256 cellar: :any_skip_relocation, big_sur:      "a1fe342f3d6807d2884065d0b99691e44e108f5502eb928f220bf5b574d88e59"
+    sha256 cellar: :any_skip_relocation, catalina:     "eb20c4494526c7e242bbacc95dcf8aa361f3ec5ed5f71c75dec7c37febed1a6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9c1a5ebdfc376a169265561cf6f2c62aa8583719b1bf4cdb5bde17ce5c027182"
   end
 
   depends_on "cbmc" => :test

@@ -4,15 +4,15 @@ class CbmcStarterKit < Formula
   desc "Templates for writing CBMC proofs for C code"
   homepage "https://github.com/model-checking/cbmc-starter-kit"
   url "https://github.com/model-checking/cbmc-starter-kit.git",
-      tag:      "starterkit-2.3",
-      revision: "b0ae0315dbad8e6115bb4d797f90813cbf00aa7d"
+      tag:      "starterkit-2.4",
+      revision: "41df0fa58c2c5f13f6c57885341f16c6d3e79bd3"
   license "MIT-0"
 
   bottle do
-    root_url "https://github.com/model-checking/cbmc-starter-kit/releases/download/starterkit-2.3"
-    sha256 cellar: :any_skip_relocation, big_sur:      "a7fe739395e3f885e0ed46eca38d7eba23c435e2a5237e9cfc7b0ab7d9d62df4"
-    sha256 cellar: :any_skip_relocation, catalina:     "df9d90e1f6f00b8b268d173904ef6d891b98ad6cf1c57db04c340b3864696a56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bdb59aa0f8dfd3931acbc29fe161e22287d680a778c468b01781c6b4e8cfa01e"
+    root_url "https://github.com/model-checking/cbmc-starter-kit/releases/download/starterkit-2.4"
+    sha256 cellar: :any_skip_relocation, big_sur:      "03d18038d9379c11d70f9adb459632727ae0e0431792a218e98d1b79bc2b4e20"
+    sha256 cellar: :any_skip_relocation, catalina:     "ccd67ac558ae4dd226d3054af7e457db1f56488d345e93707f3ecbd11872458a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6ef5280883df4ccaae15775cfcdd365ce7b3596739a51c581073f3dd88f567a8"
   end
 
   depends_on "python@3.8"
