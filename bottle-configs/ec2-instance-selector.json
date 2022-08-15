@@ -1,14 +1,14 @@
 {
     "name": "ec2-instance-selector",
-    "version": "2.3.1",
+    "version": "2.4.0",
     "bin": "ec2-instance-selector",
     "bottle": {
-        "root_url": "https://github.com/aws/amazon-ec2-instance-selector/releases/download/v2.3.1/ec2-instance-selector",
+        "root_url": "https://github.com/aws/amazon-ec2-instance-selector/releases/download/v2.4.0/ec2-instance-selector",
         "sha256": {
-            "arm64_big_sur": "7bdb2d4c94573cb3300eefcba88f7c5a9ee2744483e20a486070cd7a584b3e06",
-            "sierra": "ef5c855bf56363aa9017e6f44c049736fc7e49b172533b99e479444932de1154",
-            "linux": "b8d76483a3d2d8d53b45df417475d179106e71e0b61f1f66753d41e16de8f375",
-            "linux_arm": "7b5748548523faf41de58e544412cc22287883fc51e09b57c105afc8042b8dc9"
+            "arm64_big_sur": "1438cf3daf5821491c35763a71a10a270871d9fbbabc272cd056e17bf3f92aaa",
+            "sierra": "21b4379624b5bcf1edb0a558d28815ba616ae863d28c2642bcc1057cfe939ef6",
+            "linux": "91668c47b7b2870e3758235a08665fe669d796fdc07d7275b9664d0ec300ae2e",
+            "linux_arm": "28d90aaa4635832b0bed6166a67eaeb9c286cf7b9db7b58495bd67bba7afd823"
         }
     }
 }

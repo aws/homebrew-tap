@@ -1,16 +1,16 @@
 class EksAnywhere < Formula
   desc "CLI for managing EKS Anywhere Kubernetes clusters"
   homepage "https://github.com/aws/eks-anywhere"
-  version "0.9.2"
+  version "0.10.1"
 
   if OS.mac?
-    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/13/artifacts/eks-a/v0.9.2/darwin/amd64/eksctl-anywhere-v0.9.2-darwin-amd64.tar.gz"
-    sha256 "9b02d3e5fc9a985ada9eb1dde01a899d40ab3fb058f65b069701036c0452f211"
+    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/15/artifacts/eks-a/v0.10.1/darwin/amd64/eksctl-anywhere-v0.10.1-darwin-amd64.tar.gz"
+    sha256 "c8f2770b6a2785bea4bb14321d3974e4ea7aa9867acbd379c549c73f6ddfc120"
   end
 
   if OS.linux?
-    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/13/artifacts/eks-a/v0.9.2/linux/amd64/eksctl-anywhere-v0.9.2-linux-amd64.tar.gz"
-    sha256 "209a70592d80b5ba00b7320e7f27eab5a968e9acbe0c5433cd1aefd3cd1c8884"
+    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/15/artifacts/eks-a/v0.10.1/linux/amd64/eksctl-anywhere-v0.10.1-linux-amd64.tar.gz"
+    sha256 "a7628f2fa7f3e03b2c3f5b2a4afb0f5b547738ec41e46ba94484cbf2639fd056"
   end
 
   if Hardware::CPU.arm?
