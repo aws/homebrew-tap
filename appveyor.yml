@@ -7,7 +7,7 @@ branches:
 
 image:
   - macos-bigsur
-  - Previous Ubuntu2004
+  - Ubuntu2004
 
 # scripts that are called at very beginning, before repo cloning
 init:
@@ -18,12 +18,16 @@ for:
   -
     matrix:
       only:
-        - image: Previous Ubuntu2004
+        - image: Ubuntu2004
 
     before_build:
       # Installing linuxbrew and putting it in path.
       - export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
       - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+    
+    on_finish:
+      - sh: export APPVEYOR_SSH_BLOCK=true
+      - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
   -
     matrix:
       only:
