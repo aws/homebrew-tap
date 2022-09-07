@@ -7,7 +7,7 @@ branches:
 
 image:
   - macos-bigsur
-  - Ubuntu2004
+  - Previous Ubuntu2004
 
 # scripts that are called at very beginning, before repo cloning
 init:
