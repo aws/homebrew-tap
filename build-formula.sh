@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# echo commands as they executed
+set -x
+
 # Get path of this script so that paths are relative to it.
 # This allows it to be executed from anywhere on the file system.
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
