@@ -126,7 +126,7 @@ fi
 
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  sudo apt-get -y install jq
+  sudo apt-get -y install jq gcc-multilib
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   check_and_install_brew_pkg jq
 fi
