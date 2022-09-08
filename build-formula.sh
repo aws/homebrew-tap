@@ -129,6 +129,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   sudo apt-get -y install jq
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   check_and_install_brew_pkg jq
+fi
 
 echo "🎬 Starting formula build for ${FORMULA_FILE}"
 brew uninstall -f ${BOTTLE}
