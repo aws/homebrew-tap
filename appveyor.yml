@@ -24,10 +24,9 @@ for:
       # Installing linuxbrew and putting it in path.
       - export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
       - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+      # Install following package to mitigate the issue with Homebrew version 3.6.0 where libgcc_s.so.1 can't be found
+      - sudo apt-get install gcc-multilib
     
-    on_finish:
-      - sh: export APPVEYOR_SSH_BLOCK=true
-      - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
   -
     matrix:
       only:
