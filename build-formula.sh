@@ -128,12 +128,7 @@ if [[ ${USE_EXISTING_TAP} -eq 0 ]]; then
 fi
 
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  check_and_install_brew_pkg gcc@11
-  sudo apt-get -y install jq gcc-multilib
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  check_and_install_brew_pkg jq
-fi
+check_and_install_brew_pkg jq
 
 echo "🎬 Starting formula build for ${FORMULA_FILE}"
 brew uninstall -f ${BOTTLE}
