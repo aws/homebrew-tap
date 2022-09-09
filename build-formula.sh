@@ -127,8 +127,8 @@ if [[ ${USE_EXISTING_TAP} -eq 0 ]]; then
     brew tap "${TAP}" || :
 fi
 
-
 check_and_install_brew_pkg jq
+
 
 echo "🎬 Starting formula build for ${FORMULA_FILE}"
 brew uninstall -f ${BOTTLE}
