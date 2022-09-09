@@ -25,7 +25,7 @@ for:
       - export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
       - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
       # Install following package to mitigate the issue with Homebrew version 3.6.0 where libgcc_s.so.1 can't be found
-      - sudo apt-get -y install gcc-multilib
+      - sudo apt-get -y install gcc gcc-multilib build-essential
     
   -
     matrix:
