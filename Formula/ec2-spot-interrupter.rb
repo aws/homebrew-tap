@@ -5,21 +5,21 @@
 class Ec2SpotInterrupter < Formula
   desc "A simple CLI tool that triggers Amazon EC2 Spot Interruption Notifications and Rebalance Recommendations."
   homepage "https://github.com/aws/amazon-ec2-spot-interrupter"
-  version "0.0.8"
+  version "0.0.9"
   license "Apache-2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v0.0.8/ec2-spot-interrupter_0.0.8_Darwin_arm64.tar.gz"
-      sha256 "375905beefa29b8734a1e7e35ec055479aa640bb59b25361c218734877a7b070"
+      url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v0.0.9/ec2-spot-interrupter_0.0.9_Darwin_arm64.tar.gz"
+      sha256 "84c3bd88cb4ebd5acaf88a14050260437146300fd75bb60803515c3c181a235a"
 
       def install
         bin.install "ec2-spot-interrupter"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v0.0.8/ec2-spot-interrupter_0.0.8_Darwin_amd64.tar.gz"
-      sha256 "be110287538a532df625a9865bbba0d50cd1bb9ee67e70965de3e3fc34e2a31f"
+      url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v0.0.9/ec2-spot-interrupter_0.0.9_Darwin_amd64.tar.gz"
+      sha256 "1756b1a7e6727bf3f1ccd38aca8ea32dd6eb1d84f1a6c0339176a619e503d64a"
 
       def install
         bin.install "ec2-spot-interrupter"
@@ -29,16 +29,16 @@ class Ec2SpotInterrupter < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v0.0.8/ec2-spot-interrupter_0.0.8_Linux_armv6.tar.gz"
-      sha256 "eae2db112b86f17655a036deb56c2c18eba653d41853cc5b66bde453fcbd7262"
+      url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v0.0.9/ec2-spot-interrupter_0.0.9_Linux_armv6.tar.gz"
+      sha256 "f6f6d57d277cda2d224e3d9692f69959057509fe23aa5fc113b14338303f9e15"
 
       def install
         bin.install "ec2-spot-interrupter"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v0.0.8/ec2-spot-interrupter_0.0.8_Linux_amd64.tar.gz"
-      sha256 "d5dec8e5c7b281eddd83c72e591d5d0f3a9dd372a032ead9cad9a3785e4f9a44"
+      url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v0.0.9/ec2-spot-interrupter_0.0.9_Linux_amd64.tar.gz"
+      sha256 "fb2c79dde0a8b11f652f7aabacdfdae6313224053c97ae5d9f8cdd134d43b263"
 
       def install
         bin.install "ec2-spot-interrupter"
