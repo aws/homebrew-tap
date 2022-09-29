@@ -1,7 +1,7 @@
 {
-    "version": "1.57.0",
-    "url": "https://api.github.com/repos/aws/aws-sam-cli/tarball/v1.57.0",
-    "sha256": "016af115a066068bc89d941599504850b375eb7e31a836ddb7346a52ccd34112",
+    "version": "1.58.0",
+    "url": "https://api.github.com/repos/aws/aws-sam-cli/tarball/v1.58.0",
+    "sha256": "1967ae54630ae5afff0555a1e505bb4922e65929669f5938a7802b51d7826636",
     "name": "aws-sam-cli",
     "bin": "sam",
     "bottle": {
