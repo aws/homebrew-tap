@@ -57,4 +57,16 @@ class ConfigProvider
     def linux_arm_hash
         @config_data['bottle']['sha256']['linux_arm']
     end
+
+    def native_root_url
+        @config_data['native']['root_url']
+    end
+
+    def native_linux_x86_file
+        @config_data['native']['linux_x86']['file']
+    end
+
+    def native_linux_x86_hash
+        @config_data['native']['linux_x86']['sha256']
+    end
 end
