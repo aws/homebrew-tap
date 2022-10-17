@@ -11,10 +11,10 @@
         }
     },
     "native": {
-        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/v1.60.0/",
+        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/sam-cli-nightly",
         "linux_x86": {
             "file": "aws-sam-cli-linux-x86_64.zip",
-            "sha256": "7e768e7ea90203b7f3a685d4635837e6f8aa2c90ca0e0bda172528ec1581a4cf"
+            "sha256": "cf0869a0bab82eb6664b326b059a84b685958557d1bd5564d3efce2af53a2a4d"
         }
     }
 }

@@ -15,7 +15,7 @@ class AwsSamCliNightly < Formula
     OS.linux? and Hardware::CPU.intel?
   end
 
-  if AwsSamCli.is_native_binary_supported?
+  if AwsSamCliNightly.is_native_binary_supported?
     # instructions for native installer
     on_linux do
       on_intel do
