@@ -7,7 +7,6 @@ branches:
 
 image:
   - macos-bigsur
-  - Ubuntu2004
 
 # scripts that are called at very beginning, before repo cloning
 init:
@@ -15,19 +14,6 @@ init:
 
 # scripts that run after cloning repository
 for:
-  -
-    matrix:
-      only:
-        - image: Ubuntu2004
-
-    before_build:
-      # Installing linuxbrew and putting it in path.
-      - export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
-      - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-      # Install following packages to mitigate the issue with Homebrew version 3.6.0 where libgcc_s.so.1 can't be found
-      - brew install gcc
-      - sudo apt-get -y install build-essential
-    
   -
     matrix:
       only:
