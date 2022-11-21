@@ -41,10 +41,7 @@ class AwsSamCli < Formula
 
     def install
       venv = virtualenv_create(libexec, "python3.8")
-      system libexec/"bin/pip", "install", "--upgrade", "pip"
-      system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
-      system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
-      venv.pip_install_and_link buildpath
+      venv.pip_install_and_link("aws-sam-cli")
     end
   end
 
