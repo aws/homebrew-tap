@@ -3,7 +3,7 @@ require_relative '../ConfigProvider/config_provider'
 
 class SmithyCli < Formula
     $config_provider = ConfigProvider.new('smithy-cli')
-    desc "Smithy CLI - A CLI for building, validating, and iterating on Smithy models"
+    desc "Smithy CLI - A CLI for building, validating, querying, and iterating on Smithy models"
     homepage "https://smithy.io"
     version $config_provider.version
 
