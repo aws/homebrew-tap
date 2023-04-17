@@ -3,7 +3,7 @@ class AwsDdbsh < Formula
   homepage "https://www.ddbsh.org/"
   url "https://github.com/awslabs/dynamodb-shell.git",
       tag:      "v0.4",
-      revision: "0682fccf0fd778175eccd135a4bad1d71236d89b"
+      revision: "c7f771a135d6790ec0898beddfedc08f91c7a24f"
   license "Apache-2.0"
   depends_on "cmake" => :build
   depends_on "aws-sdk-cpp"
