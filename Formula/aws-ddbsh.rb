@@ -2,8 +2,8 @@ class AwsDdbsh < Formula
   desc "Simple SQL CLI for DynamoDB"
   homepage "https://www.ddbsh.org/"
   url "https://github.com/awslabs/dynamodb-shell.git",
-      tag:      "v0.3",
-      revision: "f6e834d6b31b40a43d7bee0bdf18d57ed000ac41"
+      tag:      "v0.4",
+      revision: "0682fccf0fd778175eccd135a4bad1d71236d89b"
   license "Apache-2.0"
   depends_on "cmake" => :build
   depends_on "aws-sdk-cpp"
