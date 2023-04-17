@@ -1,20 +1,20 @@
 {
-    "version": "1.79.0",
-    "url": "https://api.github.com/repos/aws/aws-sam-cli/tarball/v1.79.0",
-    "sha256": "ae0ca45d77f661cc5c7ded13b6c4832113dd6740dea0ec935601c546e14b7c2f",
+    "version": "1.80.0",
+    "url": "https://api.github.com/repos/aws/aws-sam-cli/tarball/v1.80.0",
+    "sha256": "4b31a829a81b771c251bd470e4d7403137012dc7458055039c54f95ef12a6881",
     "name": "aws-sam-cli",
     "bin": "sam",
     "bottle": {
-        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/v1.79.0/",
+        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/v1.80.0/",
         "sha256": {
-            "sierra": "09ebcdf4be25c0eecd27413d048b98fb818c7b9402d2a9774c4a163575ded2cb"
+            "sierra": "fe06ba26131622f54d04f1ee5cd1aca77cfb8f9f90f4d3da5538c9184a6af209"
         }
     },
     "native": {
-        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/v1.79.0/",
+        "root_url": "https://github.com/aws/aws-sam-cli/releases/download/v1.80.0/",
         "linux_x86": {
             "file": "aws-sam-cli-linux-x86_64.zip",
-            "sha256": "c514d924ec7730e909c9117c7ab57f4be286de4d46a11927097540d0ad4abd41"
+            "sha256": "3772663c085695d62dc206ecf5e766e18e40a177af18a939a5b899c62cc3e8f7"
         }
     }
 }
