@@ -26,14 +26,18 @@ class SmithyCli < Formula
     end
 
     def install
-        # install everything in the archive
-        prefix.install Dir["*"]
+        # install everything in archive into libexec, so that
+        # the contents are private to homebrew, which means it won't try
+        # to symlink anything in this directory automatically
+        libexec.install Dir["*"]
+        # create a symlink to the private executable
+        bin.install_symlink "#{libexec}/bin/smithy" => "smithy"
     end
 
     def post_install
         # brew relocates dylibs and assigns different ids, which is problematic since
         # we package a runtime image ourselves
-        Dir["#{lib}/**/*.dylib"].each do |dylib|
+        Dir["#{libexec}/**/*.dylib"].each do |dylib|
             chmod 0664, dylib
             MachO::Tools.change_dylib_id(dylib, "@rpath/#{File.basename(dylib)}")
             MachO.codesign!(dylib) if Hardware::CPU.arm?
