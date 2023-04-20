@@ -36,6 +36,7 @@ class SmithyCli < Formula
         Dir["#{lib}/**/*.dylib"].each do |dylib|
             chmod 0664, dylib
             MachO::Tools.change_dylib_id(dylib, "@rpath/#{File.basename(dylib)}")
+            MachO.codesign!(dylib) if Hardware::CPU.arm?
             chmod 0444, dylib
         end
         # call warmup command to generate the jsa 
