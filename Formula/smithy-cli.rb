@@ -33,7 +33,7 @@ class SmithyCli < Formula
     def post_install
         # brew relocates dylibs and assigns different ids, which is problematic since
         # we package a runtime image ourselves
-        Dir["#{lib}/**/*.dylib"].each do |dylib|
+        Dir["#{lib}/smithy-cli/**/*.dylib"].each do |dylib|
             chmod 0664, dylib
             MachO::Tools.change_dylib_id(dylib, "@rpath/#{File.basename(dylib)}")
             MachO.codesign!(dylib) if Hardware::CPU.arm?
