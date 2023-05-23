@@ -9,7 +9,7 @@ class CbmcStarterKit < Formula
   license "MIT-0"
 
   bottle do
-    root_url "https://github.com/model-checking/cbmc-starter-kit/releases/download/starterkit-2.9"
+    root_url "https://github.com/model-checking/cbmc-starter-kit/releases/download/starterkit-2.10"
     sha256 cellar: :any_skip_relocation, monterey:     "9530f664a46e028745bccb189c29aaddfbfa8af1f1ff6bf150a5b8e4633e7779"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f9bff9301507c2c8af3918b568fe1100bf362611dba2004a19346ce00659fda7"
   end
