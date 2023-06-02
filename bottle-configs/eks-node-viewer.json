@@ -1,0 +1,13 @@
+{
+    "name": "eks-node-viewer",
+    "version": "0.3.0",
+    "bin": "eks-node-viewer",
+    "bottle": {
+        "root_url": "https://github.com/awslabs/eks-node-viewer/releases/download/v0.3.0/eks-node-viewer",
+        "sha256": {
+            "sierra": "a7099215e8a99129d3ba0c4930594f50090820b7f2f9d8ff7d54c2b104b58316",
+            "linux": "ec36a5070b03a21ba88e98d24f3cf98337fe90a89b0f430848433908164c8c0f",
+            "linux_arm": "28015f0d53803f199b9a22cf92aa0e262376888c89fc333ba6e86e4d9350d5d4"
+        }
+    }
+}
