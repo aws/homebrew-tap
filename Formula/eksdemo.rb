@@ -4,23 +4,23 @@
 class Eksdemo < Formula
   desc "The easy button for learning, testing and demoing Amazon EKS"
   homepage "https://github.com/awslabs/eksdemo"
-  version "0.8.0"
+  version "0.9.0"
   license "MIT-0"
 
   depends_on "weaveworks/tap/eksctl"
   
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/awslabs/eksdemo/releases/download/v0.8.0/eksdemo_Darwin_arm64.tar.gz"
-      sha256 "991b96d924c3ed9ccc5ec14bf57027be5a1e75b4c3974f75f78a15b7629c530b"
+      url "https://github.com/awslabs/eksdemo/releases/download/v0.9.0/eksdemo_Darwin_arm64.tar.gz"
+      sha256 "4f6842b3621dc3fd13e1e2e9898481b4396e466c3c468b7ce71244e04c5f2294"
 
       def install
         bin.install "eksdemo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/awslabs/eksdemo/releases/download/v0.8.0/eksdemo_Darwin_x86_64.tar.gz"
-      sha256 "32db7d237d80264ddc5786655977041d10589e19349d77a9b190f82bb9a17b6b"
+      url "https://github.com/awslabs/eksdemo/releases/download/v0.9.0/eksdemo_Darwin_x86_64.tar.gz"
+      sha256 "014b7c00933cf2930fef7e117213cabea6e91aac4ed216051a7d32f31362a6ee"
 
       def install
         bin.install "eksdemo"
@@ -30,16 +30,16 @@ class Eksdemo < Formula
   
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/awslabs/eksdemo/releases/download/v0.8.0/eksdemo_Linux_arm64.tar.gz"
-      sha256 "25c7d584f25663414718275ef5970dee15c0875519cbfa8f00ed20e4ebd2ef94"
+      url "https://github.com/awslabs/eksdemo/releases/download/v0.9.0/eksdemo_Linux_arm64.tar.gz"
+      sha256 "b0d0c1693553c05cecfdbdadafd3efedee0e768d97656513fb8a30e2c70153db"
 
       def install
         bin.install "eksdemo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/awslabs/eksdemo/releases/download/v0.8.0/eksdemo_Linux_x86_64.tar.gz"
-      sha256 "f38a2d8d1a61ab4fdf3b07ecccd53c38c7af9d9aee76d2f725f14f1c23247fe1"
+      url "https://github.com/awslabs/eksdemo/releases/download/v0.9.0/eksdemo_Linux_x86_64.tar.gz"
+      sha256 "29f3ae48063c1b343fe728bad3239b89564142781682f66a44b9cb1a65cbcdad"
 
       def install
         bin.install "eksdemo"
