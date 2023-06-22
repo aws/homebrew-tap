@@ -14,7 +14,7 @@
         "root_url": "https://github.com/aws/aws-sam-cli/releases/download/v1.88.0/",
         "linux_x86": {
             "file": "aws-sam-cli-linux-x86_64.zip",
-            "sha256": "de2b814e57ef7016268b4d33d52692567f16429bee282808406b411d1c2f45d1"
+            "sha256": "99fb6c03322a98c319e3893b11b5434e9b5fc7b43d0a917b0ea37cef25c077e2"
         }
     }
 }
