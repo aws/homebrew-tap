@@ -10,8 +10,8 @@ image:
 
 # scripts that are called at very beginning, before repo cloning
 init:
-  - unset HOMEBREW_NO_INSTALL_FROM_API # Needs to be unset to untap homebrew/core
-  - brew untap homebrew/cask homebrew/core --force
+  - brew untap homebrew/cask --force
+  - brew update-reset
   - git config --global core.autocrlf input
 
 # scripts that run after cloning repository
