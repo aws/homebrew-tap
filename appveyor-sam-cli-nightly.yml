@@ -10,7 +10,7 @@ image:
 
 # scripts that are called at very beginning, before repo cloning
 init:
-  - brew update-reset
+  - brew untap homebrew/cask homebrew/core
   - git config --global core.autocrlf input
 
 # scripts that run after cloning repository
