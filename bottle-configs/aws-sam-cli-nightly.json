@@ -1,7 +1,7 @@
 {
-    "version": "1.93.0.dev202307250901",
-    "url": "https://api.github.com/repos/aws/aws-sam-cli/tarball/v1.93.0.dev202307250901",
-    "sha256": "01ed512651071047fa2ffd8c4272bb2b89f8007f9d72575de634dfcd10948ea5",
+    "version": "1.93.0.dev202307260901",
+    "url": "https://api.github.com/repos/aws/aws-sam-cli/tarball/v1.93.0.dev202307260901",
+    "sha256": "436a96ffa9533077ab1666c462eae28bf9072fe245ef0bdfe2f6b145a46e4f90",
     "name": "aws-sam-cli-nightly",
     "bin": "sam-nightly",
     "bottle": {
