@@ -53,7 +53,7 @@ class AwsSamCli < Formula
     system bin/"sam --version"
   end
 
-  opoo "SAM CLI will no longer support installing through aws/tap/aws-sam-cli. 
-        Please consider using supported installers, for more information 
+  opoo "Starting from 2023/8/14, AWS SAM CLI will no longer support installing through aws/tap/aws-sam-cli. 
+        Please use supported installers, for more information 
         https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html"
 end
