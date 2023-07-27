@@ -42,12 +42,6 @@ class AwsSamCli < Formula
     def install
       venv = virtualenv_create(libexec, "python3.8")
       system libexec/"bin/pip", "install", "--upgrade", "pip"
-      # work around cython 3.0.0 breaking pyyaml
-      # https://github.com/yaml/pyyaml/issues/724
-      system libexec/"bin/pip", "install", "wheel"
-      system libexec/"bin/pip", "install", "--no-build-isolation", "cython<3.0.0", "pyyaml==5.4.1"
-      system libexec/"bin/pip", "uninstall", "wheel", "cython", "--yes"
-      # end work around
       system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
       system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
       venv.pip_install_and_link buildpath
@@ -58,4 +52,8 @@ class AwsSamCli < Formula
     assert_match "Usage", shell_output("#{bin}/sam --help")
     system bin/"sam --version"
   end
+
+  opoo "Starting from 2023/8/14, AWS SAM CLI will no longer support installing through aws/tap/aws-sam-cli. 
+        Please use supported installers, for more information 
+        https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html"
 end
