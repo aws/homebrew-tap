@@ -40,7 +40,9 @@ class AwsSamCli < Formula
     depends_on "python@3.8"
 
     def install
-      venv = virtualenv_create(libexec, "python3.8")
+      # https://github.com/Homebrew/brew/pull/15792
+      # re-add pip to the virtualenv using without_pip=false
+      venv = virtualenv_create(libexec, "python3.8", without_pip:false)
       system libexec/"bin/pip", "install", "--upgrade", "pip"
       system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
       system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
