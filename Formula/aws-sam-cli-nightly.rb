@@ -38,7 +38,7 @@ class AwsSamCliNightly < Formula
     depends_on "python@3.8"
 
     def install
-      # https://github.com/aws/homebrew-tap/pull/504
+      # https://github.com/Homebrew/brew/pull/15792
       # re-add pip to the virtualenv using without_pip=false
       venv = virtualenv_create(libexec, "python3.8", without_pip:false)
       system libexec/"bin/pip", "install", "--upgrade", "pip"
