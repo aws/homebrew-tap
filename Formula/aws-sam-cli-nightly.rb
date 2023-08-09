@@ -52,4 +52,7 @@ class AwsSamCliNightly < Formula
     assert_match "Usage", shell_output("#{bin}/sam-nightly --help")
     system bin/"sam-nightly --version"
   end
+
+  opoo "On September 12, 2023, AWS will no longer maintain Homebrew installer for nightly version of AWS SAM CLI (aws/tap/aws-sam-cli-nightly). 
+        For AWS supported installations, use the first-party installers (https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/manage-sam-cli-versions.html#manage-sam-cli-versions-nightly-build)."
 end
