@@ -40,7 +40,9 @@ class AwsSamCli < Formula
     depends_on "python@3.8"
 
     def install
-      venv = virtualenv_create(libexec, "python3.8")
+      # https://github.com/Homebrew/brew/pull/15792
+      # re-add pip to the virtualenv using without_pip=false
+      venv = virtualenv_create(libexec, "python3.8", without_pip:false)
       system libexec/"bin/pip", "install", "--upgrade", "pip"
       system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
       system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
@@ -53,7 +55,7 @@ class AwsSamCli < Formula
     system bin/"sam --version"
   end
 
-  opoo "Starting from 2023/8/14, AWS SAM CLI will no longer support installing through aws/tap/aws-sam-cli. 
-        Please use supported installers, for more information 
-        https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html"
+  opoo "On September 12, 2023, AWS will no longer maintain the Homebrew installer for AWS SAM CLI (aws/tap/aws-sam-cli). 
+        For AWS supported installations, use the first-party installers (https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html). 
+        To continue using Homebrew, use the community supported installer (https://formulae.brew.sh/formula/aws-sam-cli)."
 end
