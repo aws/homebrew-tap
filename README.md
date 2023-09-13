@@ -14,7 +14,6 @@ brew install <FORMULA>
 
 | Repository | Formula | Description |
 | ---------- | ------- | ----------- |
-| [aws-sam-cli](https://github.com/awslabs/aws-sam-cli) | [formula](Formula/aws-sam-cli.rb) | CLI tool to build, test, debug, and deploy Serverless applications using AWS Lambda |
 | container-tools | [formula](Formula/container-tools.rb) | Meta-package to install common container tools |
 | [copilot-cli](https://github.com/aws/copilot-cli) | [formula](Formula/copilot-cli.rb) | Build, release and operate production ready containerized applications on Amazon ECS |
 | [ec2-instance-selector](https://github.com/aws/amazon-ec2-instance-selector) | [formula](Formula/ec2-instance-selector.rb) | CLI tool and go library which recommends instance types based on resource criteria like vcpus and memory |
@@ -31,6 +30,13 @@ brew install <FORMULA>
 | [emr-on-eks-custom-image](https://github.com/awslabs/amazon-emr-on-eks-custom-image-cli) | [formula](Formula/emr-on-eks-custom-image.rb) | A CLI tool to interact with EMR on EKS custom images.
 | [cbmc-viewer](https://github.com/awslabs/aws-viewer-for-cbmc) | [formula](Formula/cbmc-viewer.rb) | CBMC Viewer scans the output of CBMC and produces a summary that can be opened in any web browser to understand and debug CBMC findings.
 | [dynamodb-shell](https://github.com/awslabs/dynamodb-shell) | [formula](Formula/aws-ddbsh.rb) | A simple SQL CLI for DynamoDB
+
+## Migrated Formulae's
+| Repository | Migrated Tap | Formula | Description |
+| ---------- | ------------ | ------- | ----------- |
+| [aws-sam-cli](https://github.com/awslabs/aws-sam-cli) | `homebrew/core` | [formula](https://github.com/Homebrew/homebrew-core/blob/master/Formula/a/aws-sam-cli.rb) | CLI tool to build, test, debug, and deploy Serverless applications using AWS Lambda |
+| [smithy-cli](https://github.com/awslabs/smithy) | `smithy-lang/tap` |  [formula](https://github.com/smithy-lang/homebrew-tap/blob/main/Formula/smithy-cli.rb) | A CLI for building, validating, querying, and iterating on Smithy models
+
 
 ## Documentation
 
