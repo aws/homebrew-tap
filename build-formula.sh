@@ -52,7 +52,7 @@ USER_TAP=""
 TAP="${AWS_TAP}"
 
 # Process our input arguments
-while getopts "f:hult:" opt; do
+while getopts "f:b:hult:" opt; do
   case ${opt} in
     f ) # Full Formula File Path
         FORMULA_FILE="${OPTARG}"
