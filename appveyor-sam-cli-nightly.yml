@@ -25,6 +25,8 @@ for:
 # Building bottles shell script.
 build_script:
   - ./build-formula.sh -f Formula/_aws-sam-cli-nightly.rb -b bottle-configs/aws-sam-cli-nightly.json
+  # since bottle is prefixed with '_', remove that extra '_' from final bottle filename
+  - for f in build/*.bottle.tar.gz; do mv -i -- "$f" "${f//_/}"; done
 
 artifacts:
   - path: "build/*.bottle.tar.gz"
