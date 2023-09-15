@@ -36,6 +36,7 @@ USAGE=$(cat << 'EOM'
             -f          Formula file to build
 
           Optional:
+            -b          Override default bottle configuration file
             -h          Print this usage help
             -u          Use existing tap instead of untapping and retapping
             -l          Dynamically sets the TAP to the first git remote found that is not the official aws tap
@@ -55,6 +56,9 @@ while getopts "f:hult:" opt; do
   case ${opt} in
     f ) # Full Formula File Path
         FORMULA_FILE="${OPTARG}"
+      ;;
+    b ) # Override default bottle configuration path
+        BOTTLE_CONFIG="${OPTARG}"
       ;;
     l ) # Local fork
         LOCAL_FORK=1
@@ -139,7 +143,8 @@ brew uninstall -f ${BOTTLE}
 ## Build bottle
 brew install --build-bottle ${TAP}/${BOTTLE}
 
-BOTTLE_CONFIG=$(jq -r '.' ${SCRIPTPATH}/bottle-configs/${BOTTLE}.json)
+DEFAULT_BOTTLE_CONFIG=$(jq -r '.' ${SCRIPTPATH}/bottle-configs/${BOTTLE}.json)
+BOTTLE_CONFIG=${BOTTLE_CONFIG:-$DEFAULT_BOTTLE_CONFIG}
 BOTTLE_ASSET_VERSION="$(echo ${BOTTLE_CONFIG} | jq -r '.version')"
 echo "[${BOTTLE}]: Version -> ${BOTTLE_ASSET_VERSION}"
 BOTTLE_ASSET_URL="$(echo ${BOTTLE_CONFIG} | jq -r '.bottle.root_url')"
