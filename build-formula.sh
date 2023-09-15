@@ -58,7 +58,7 @@ while getopts "f:b:hult:" opt; do
         FORMULA_FILE="${OPTARG}"
       ;;
     b ) # Override default bottle configuration path
-        BOTTLE_CONFIG="${OPTARG}"
+        BOTTLE_CONFIG_PATH="${SCRIPTPATH}/${OPTARG}"
       ;;
     l ) # Local fork
         LOCAL_FORK=1
@@ -143,8 +143,9 @@ brew uninstall -f ${BOTTLE}
 ## Build bottle
 brew install --build-bottle ${TAP}/${BOTTLE}
 
-DEFAULT_BOTTLE_CONFIG=$(jq -r '.' ${SCRIPTPATH}/bottle-configs/${BOTTLE}.json)
-BOTTLE_CONFIG=${BOTTLE_CONFIG:-$DEFAULT_BOTTLE_CONFIG}
+DEFAULT_BOTTLE_CONFIG_PATH="${SCRIPTPATH}/bottle-configs/${BOTTLE}.json"
+BOTTLE_CONFIG_PATH=${BOTTLE_CONFIG_PATH:-$DEFAULT_BOTTLE_CONFIG_PATH}
+BOTTLE_CONFIG=$(jq -r '.' ${BOTTLE_CONFIG_PATH})
 BOTTLE_ASSET_VERSION="$(echo ${BOTTLE_CONFIG} | jq -r '.version')"
 echo "[${BOTTLE}]: Version -> ${BOTTLE_ASSET_VERSION}"
 BOTTLE_ASSET_URL="$(echo ${BOTTLE_CONFIG} | jq -r '.bottle.root_url')"
