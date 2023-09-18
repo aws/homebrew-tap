@@ -30,7 +30,7 @@ build_script:
   - BOTTLE_FILE=(*.bottle.tar.gz)
   # remove the underscore from folder inside tar.gz and re-pack it again
   - mkdir tmp-bottle-folder 
-  - tar -xf $BOTTLE_FILE tmp-bottle-folder
+  - tar -xf $BOTTLE_FILE -C tmp-bottle-folder
   - cd tmp-bottle-folder
   - mv _aws-sam-cli-nightly/ aws-sam-cli-nightly/
   - tar -czvf $BOTTLE_FILE aws-sam-cli-nightly/
