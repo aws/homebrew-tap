@@ -25,8 +25,20 @@ for:
 # Building bottles shell script.
 build_script:
   - ./build-formula.sh -f Formula/_aws-sam-cli-nightly.rb -b bottle-configs/aws-sam-cli-nightly.json
-  # since bottle is prefixed with '_', remove that extra '_' from final bottle filename
-  - cd build && for f in *.bottle.tar.gz; do mv -i -- "$f" "${f#*_}"; done
+  # since bottle is prefixed with '_', we need to run following steps to make it easy to use the bottle if needed
+  - cd build && for f in *.bottle.tar.gz; do mv -i -- "$f" "${f#*_}"; done # remove _ prefix from bottle name
+  - BOTTLE_FILE=(*.bottle.tar.gz)
+  # remove the underscore from folder inside tar.gz and re-pack it again
+  - mkdir tmp-bottle-folder 
+  - tar -xf $BOTTLE_FILE tmp-bottle-folder
+  - cd tmp-bottle-folder
+  - mv _aws-sam-cli-nightly/ aws-sam-cli-nightly/
+  - tar -czvf $BOTTLE_FILE aws-sam-cli-nightly/
+  # go to build folder again, replace original tar.gz file with the one which is updated, clean tmp folders
+  - cd ..
+  - rm $BOTTLE_FILE
+  - mv tmp-bottle-folder/$BOTTLE_FILE ./
+  - rm -rf tmp-bottle-folder
 
 artifacts:
   - path: "build/*.bottle.tar.gz"
