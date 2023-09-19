@@ -1,20 +1,20 @@
 {
-    "version": "1.97.0.dev202309040901",
-    "url": "https://api.github.com/repos/aws/aws-sam-cli/tarball/v1.97.0.dev202309040901",
-    "sha256": "299e93f0add9303e1d439036c4c984be638be89f00941dc8370a32c70de745ee",
+    "version": "1.97.0.dev202309190901",
+    "url": "https://api.github.com/repos/aws/aws-sam-cli/tarball/v1.97.0.dev202309190901",
+    "sha256": "b31984fcb543a1943aca22c7ac2746e996531dcb5cfbd08a5b9c1c9324058ac4",
     "name": "aws-sam-cli-nightly",
     "bin": "sam-nightly",
     "bottle": {
         "root_url": "https://github.com/aws/aws-sam-cli/releases/download/sam-cli-nightly",
         "sha256": {
-            "sierra": "7785d20e76523c711281dcf1e57fb3629c14d8e9f97bb7d127f7e261621ebfda"
+            "sierra": "0d7b76559750f6456a89dd0ef0fbe5a6badf22ada344a3fb27e0ef1fb0eafa05"
         }
     },
     "native": {
         "root_url": "https://github.com/aws/aws-sam-cli/releases/download/sam-cli-nightly/",
         "linux_x86": {
             "file": "aws-sam-cli-linux-x86_64.zip",
-            "sha256": "cbcbbb1363509b1c7557ea6a08a4b23b4036d50be72e5e9e59078b266f9aaf30"
+            "sha256": "e780e827010feaea7c15038c907c57fd526206153ebb9196f044186da7ef5017"
         }
     }
 }

@@ -1,23 +1,21 @@
 require_relative "../ConfigProvider/config_provider"
 
-class AwsSamCli < Formula
+class AwsSamCliNightly < Formula
   include Language::Python::Virtualenv
 
-  config_provider = ConfigProvider.new("aws-sam-cli")
+  config_provider = ConfigProvider.new("aws-sam-cli-nightly")
 
-  desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications"
-  homepage "https://github.com/awslabs/aws-sam-cli/"
+  desc "AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications. This is a pre-release version of AWS SAM CLI"
+  homepage "https://github.com/aws/aws-sam-cli/"
   url config_provider.url
   sha256 config_provider.sha256
-  head "https://github.com/awslabs/aws-sam-cli.git", branch: "develop"
-
-  conflicts_with "aws-sam-cli-rc", because: "both install the 'sam' binary"
+  head "https://github.com/aws/aws-sam-cli.git", branch: "nightly-builds"
 
   def self.is_native_binary_supported?
     OS.linux? and Hardware::CPU.intel?
   end
 
-  if AwsSamCli.is_native_binary_supported?
+  if AwsSamCliNightly.is_native_binary_supported?
     # instructions for native installer
     on_linux do
       on_intel do
@@ -28,7 +26,7 @@ class AwsSamCli < Formula
 
     def install
       libexec.install Dir["dist/*"]
-      bin.write_exec_script libexec/"sam"
+      bin.write_exec_script libexec/"sam-nightly"
     end
   else
     # instructions for python virtualenv installer
@@ -46,16 +44,17 @@ class AwsSamCli < Formula
       system libexec/"bin/pip", "install", "--upgrade", "pip"
       system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
       system libexec/"bin/pip", "uninstall", "-y", "aws-sam-cli"
+      # bin folder is not created automatically
+      bin.mkpath
       venv.pip_install_and_link buildpath
     end
-  end
+  end  
 
   test do
-    assert_match "Usage", shell_output("#{bin}/sam --help")
-    system bin/"sam --version"
+    assert_match "Usage", shell_output("#{bin}/sam-nightly --help")
+    system bin/"sam-nightly --version"
   end
 
-  opoo "On September 12, 2023, AWS will no longer maintain the Homebrew installer for AWS SAM CLI (aws/tap/aws-sam-cli). 
-        For AWS supported installations, use the first-party installers (https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html). 
-        To continue using Homebrew, use the community supported installer (https://formulae.brew.sh/formula/aws-sam-cli)."
+  opoo "On September 12, 2023, AWS will no longer maintain the Homebrew installer for nightly version of AWS SAM CLI (aws/tap/aws-sam-cli-nightly). 
+        For AWS supported installations, use the first-party installers (https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/manage-sam-cli-versions.html#manage-sam-cli-versions-nightly-build)."
 end
