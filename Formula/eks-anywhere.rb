@@ -1,27 +1,26 @@
 class EksAnywhere < Formula
   desc "CLI for managing EKS Anywhere Kubernetes clusters"
   homepage "https://github.com/aws/eks-anywhere"
-  version "0.18.0"
+  version "0.18.2"
 
-  if OS.mac?
-    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/50/artifacts/eks-a/v0.18.0/darwin/amd64/eksctl-anywhere-v0.18.0-darwin-amd64.tar.gz"
-    sha256 "add3f52f639b86eef6c4a8e4f7b16dc60dc9360b698081c085c90e7e61f55e9d"
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/53/artifacts/eks-a/v0.18.2/darwin/arm64/eksctl-anywhere-v0.18.2-darwin-arm64.tar.gz"
+    sha256 "b07d629fb3d52944f38fbd4bec8511a49fdbd933e10792ef41ab800f84ac278b"
   end
 
-  if OS.linux?
-    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/50/artifacts/eks-a/v0.18.0/linux/amd64/eksctl-anywhere-v0.18.0-linux-amd64.tar.gz"
-    sha256 "f6fe4f4a1592523193b76dcc228b76b1bc6bc715887562ba712cad236d4d37ad"
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/53/artifacts/eks-a/v0.18.2/darwin/amd64/eksctl-anywhere-v0.18.2-darwin-amd64.tar.gz"
+    sha256 "d2410b4300d2ec61fc771c733503df7fa66f3ac527bff12dd8f9e0b98f853459"
   end
 
-  if Hardware::CPU.arm?
-    def caveats
-      <<~EOF
-          =====WARNING=====
-          ARM CPU's are not yet supported.
-          The amd64 binary has been installed but will not work.
-          Please uninstall this formula.
-      EOF
-    end
+  if OS.linux? && Hardware::CPU.arm?
+    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/53/artifacts/eks-a/v0.18.2/linux/arm64/eksctl-anywhere-v0.18.2-linux-arm64.tar.gz"
+    sha256 "b54ba7ae56f2a90ceefd7d000bfc7e4f6b04c9f276037ad7eff3c81db232c6e1"
+  end
+
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/53/artifacts/eks-a/v0.18.2/linux/amd64/eksctl-anywhere-v0.18.2-linux-amd64.tar.gz"
+    sha256 "f557608e4ce5d68b3a8df4f65cc21d4e2db85687fa8e97f6f425817e32fd1d18"
   end
 
   depends_on "eksctl"
