@@ -1,4 +1,3 @@
 {
-  "smithy-cli": "smithy-lang/tap",
   "aws-sam-cli": "homebrew/core"
 }
