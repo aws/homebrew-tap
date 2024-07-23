@@ -8,9 +8,9 @@ class CbmcViewer < Formula
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-3.8"
-    sha256 cellar: :any_skip_relocation, monterey:     "a7a61a2a4d6b7c5eabb26d270ff135d91db2b0dcd3de43e3724c9ebea1c90636"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4a925c06e818dcf39c05716341e498199ad3068f4281004d9fde3cd9b8c555b2"
+    root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-3.9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "d303de5c4ec434be51c7917c2dcf87e337f23dce88756f0ed583f9e5c8548712"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0c809d7478aa9b1c467a1a9ec835c1542d570ff6245ab6ba1c41bb667eb6e577"
   end
 
   depends_on "cbmc" => :test
