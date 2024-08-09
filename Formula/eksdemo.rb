@@ -5,15 +5,15 @@
 class Eksdemo < Formula
   desc "The easy button for learning, testing and demoing Amazon EKS"
   homepage "https://github.com/awslabs/eksdemo"
-  version "0.12.0"
+  version "0.15.0"
   license "MIT-0"
 
   depends_on "weaveworks/tap/eksctl"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/awslabs/eksdemo/releases/download/v0.12.0/eksdemo_Darwin_arm64.tar.gz"
-      sha256 "8ab671f791f982033d3c0189668e62d77a10d112ab8a77c116032040abc1d481"
+    on_intel do
+      url "https://github.com/awslabs/eksdemo/releases/download/v0.15.0/eksdemo_Darwin_x86_64.tar.gz"
+      sha256 "3491358aa4dae51e1f9173ac81708630872fefce077d8fe55d4ea880c7ebca28"
 
       def install
         bin.install "eksdemo"
@@ -22,9 +22,9 @@ class Eksdemo < Formula
         fish_completion.install "completions/eksdemo.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/awslabs/eksdemo/releases/download/v0.12.0/eksdemo_Darwin_x86_64.tar.gz"
-      sha256 "5f4f65568c7c840dc830bb52421ba64b5eeaae5bc0466e40d5b3c1415b085107"
+    on_arm do
+      url "https://github.com/awslabs/eksdemo/releases/download/v0.15.0/eksdemo_Darwin_arm64.tar.gz"
+      sha256 "202c1789a1cc5e380a8953c28e2e7cb9da655d2681025801fa25c277b67b43a9"
 
       def install
         bin.install "eksdemo"
@@ -36,26 +36,30 @@ class Eksdemo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/awslabs/eksdemo/releases/download/v0.12.0/eksdemo_Linux_arm64.tar.gz"
-      sha256 "9fe8d65708da6efc2cdaa3eeee59925841abaf3992248d03cc0efc67d82eeafa"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/awslabs/eksdemo/releases/download/v0.15.0/eksdemo_Linux_x86_64.tar.gz"
+        sha256 "84321c9c441d662e21c40dbc3db7631b55e6dd0ebd8aa0911ba1ebf71276591d"
 
-      def install
-        bin.install "eksdemo"
-        bash_completion.install "completions/eksdemo.bash" => "eksdemo"
-        zsh_completion.install "completions/eksdemo.zsh" => "_eksdemo"
-        fish_completion.install "completions/eksdemo.fish"
+        def install
+          bin.install "eksdemo"
+          bash_completion.install "completions/eksdemo.bash" => "eksdemo"
+          zsh_completion.install "completions/eksdemo.zsh" => "_eksdemo"
+          fish_completion.install "completions/eksdemo.fish"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/awslabs/eksdemo/releases/download/v0.12.0/eksdemo_Linux_x86_64.tar.gz"
-      sha256 "e73109d1eb641e478866fa8c08890a9f498252712c5cd23e2ade2d6fd6b3006f"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/awslabs/eksdemo/releases/download/v0.15.0/eksdemo_Linux_arm64.tar.gz"
+        sha256 "37eabe36836173f519efe4d50e71304b9eac548664607a66e9d2d6fded778e9d"
 
-      def install
-        bin.install "eksdemo"
-        bash_completion.install "completions/eksdemo.bash" => "eksdemo"
-        zsh_completion.install "completions/eksdemo.zsh" => "_eksdemo"
-        fish_completion.install "completions/eksdemo.fish"
+        def install
+          bin.install "eksdemo"
+          bash_completion.install "completions/eksdemo.bash" => "eksdemo"
+          zsh_completion.install "completions/eksdemo.zsh" => "_eksdemo"
+          fish_completion.install "completions/eksdemo.fish"
+        end
       end
     end
   end
