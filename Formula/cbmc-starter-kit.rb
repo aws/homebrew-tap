@@ -10,7 +10,7 @@ class CbmcStarterKit < Formula
 
   bottle do
     root_url "https://github.com/model-checking/cbmc-starter-kit/releases/download/starterkit-2.10"
-    sha256 cellar: :any_skip_relocation, monterey: "530e469c4d02a04128efcd22177293ec59e04afa271144648185774aadbc7205"
+    sha256 cellar: :any_skip_relocation, monterey:     "530e469c4d02a04128efcd22177293ec59e04afa271144648185774aadbc7205"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d7c29a533d8711b9a56694b7b37f19d2367e92d1bb15a8d1d5d93d04b686b6fc"
   end
 
