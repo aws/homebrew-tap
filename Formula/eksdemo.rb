@@ -5,15 +5,15 @@
 class Eksdemo < Formula
   desc "The easy button for learning, testing and demoing Amazon EKS"
   homepage "https://github.com/awslabs/eksdemo"
-  version "0.15.0"
+  version "0.16.0"
   license "MIT-0"
 
   depends_on "weaveworks/tap/eksctl"
 
   on_macos do
     on_intel do
-      url "https://github.com/awslabs/eksdemo/releases/download/v0.15.0/eksdemo_Darwin_x86_64.tar.gz"
-      sha256 "3491358aa4dae51e1f9173ac81708630872fefce077d8fe55d4ea880c7ebca28"
+      url "https://github.com/awslabs/eksdemo/releases/download/v0.16.0/eksdemo_Darwin_x86_64.tar.gz"
+      sha256 "521a0b00eaea3bf544584f9b3abbb6362766e85fcae32860dc0f2f6f24891cff"
 
       def install
         bin.install "eksdemo"
@@ -23,8 +23,8 @@ class Eksdemo < Formula
       end
     end
     on_arm do
-      url "https://github.com/awslabs/eksdemo/releases/download/v0.15.0/eksdemo_Darwin_arm64.tar.gz"
-      sha256 "202c1789a1cc5e380a8953c28e2e7cb9da655d2681025801fa25c277b67b43a9"
+      url "https://github.com/awslabs/eksdemo/releases/download/v0.16.0/eksdemo_Darwin_arm64.tar.gz"
+      sha256 "0fdf1fe5e793dfe467dbe79da45c08ce5c374e9c3e42970a1843c1125739834b"
 
       def install
         bin.install "eksdemo"
@@ -38,8 +38,8 @@ class Eksdemo < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/awslabs/eksdemo/releases/download/v0.15.0/eksdemo_Linux_x86_64.tar.gz"
-        sha256 "84321c9c441d662e21c40dbc3db7631b55e6dd0ebd8aa0911ba1ebf71276591d"
+        url "https://github.com/awslabs/eksdemo/releases/download/v0.16.0/eksdemo_Linux_x86_64.tar.gz"
+        sha256 "93e8b09085fa76d76f3c81591d57829a0a6e29ff4bc4b3fc04f2808f12daa2bb"
 
         def install
           bin.install "eksdemo"
@@ -51,8 +51,8 @@ class Eksdemo < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/awslabs/eksdemo/releases/download/v0.15.0/eksdemo_Linux_arm64.tar.gz"
-        sha256 "37eabe36836173f519efe4d50e71304b9eac548664607a66e9d2d6fded778e9d"
+        url "https://github.com/awslabs/eksdemo/releases/download/v0.16.0/eksdemo_Linux_arm64.tar.gz"
+        sha256 "967283460aa8169b948e9b5dc10e78ca2906ba8145b93836ac71172e48143f3b"
 
         def install
           bin.install "eksdemo"
