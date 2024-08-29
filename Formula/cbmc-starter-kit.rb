@@ -4,8 +4,8 @@ class CbmcStarterKit < Formula
   desc "Templates for writing CBMC proofs for C code"
   homepage "https://github.com/model-checking/cbmc-starter-kit"
   url "https://github.com/model-checking/cbmc-starter-kit.git",
-      tag:      "starterkit-2.10",
-      revision: "ba019b2ca57b2a3b4ba9d1c3affdf3fb56deecd7"
+      tag:      "starterkit-2.11",
+      revision: "3ebf47c9eeda4b6875b46cb301c5f805fc9e437a"
   license "MIT-0"
 
   bottle do
