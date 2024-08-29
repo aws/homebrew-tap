@@ -9,9 +9,9 @@ class CbmcStarterKit < Formula
   license "MIT-0"
 
   bottle do
-    root_url "https://github.com/model-checking/cbmc-starter-kit/releases/download/starterkit-2.10"
-    sha256 cellar: :any_skip_relocation, monterey:     "530e469c4d02a04128efcd22177293ec59e04afa271144648185774aadbc7205"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d7c29a533d8711b9a56694b7b37f19d2367e92d1bb15a8d1d5d93d04b686b6fc"
+    root_url "https://github.com/model-checking/cbmc-starter-kit/releases/download/starterkit-2.11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e2187b06cdb6355c4d01af5c8c1dd4f5dc6129e9abe1a05b7f4e3575b718bfd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cfe1968943d6bab67d175772732b2a4af7ce8c898189ce460c03de71779b8b17"
   end
 
   depends_on "python@3.10"
