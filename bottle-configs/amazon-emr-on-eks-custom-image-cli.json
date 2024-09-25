@@ -1,13 +1,13 @@
 {
   "name": "amazon-emr-on-eks-custom-image-cli",
-  "version": "1.05",
+  "version": "1.06",
   "bin": "emr-on-eks-custom-image",
   "bottle": {
-    "root_url": "https://github.com/awslabs/amazon-emr-on-eks-custom-image-cli/releases/download/v1.05/amazon-emr-on-eks-custom-image-cli",
+    "root_url": "https://github.com/awslabs/amazon-emr-on-eks-custom-image-cli/releases/download/v1.06/amazon-emr-on-eks-custom-image-cli",
     "sha256": {
       "arm64_big_sur": "",
-      "sierra": "5168330a1801a901934eee52eb6695b958cfdd6044e0fdcf3d988b0ae0e6359a",
-      "linux": "c883ad7e7a0ac920037c06a8b83d419df7e4d85f7dee33c75637fbc1ef651c63"
+      "sierra": "b41827b64aa5affcb48d488fc136da1e1dba578fb8168d4ab1748c96f44d7b8a",
+      "linux": "42ac8f9fcb200f45ecd6e05f06be27711b7dff2a84234e2eacf01c73ce1aa017"
     }
   }
 }
