@@ -3,8 +3,8 @@ class CbmcViewer < Formula
   desc "Scans the output of CBMC and produces a browsable summary of the results"
   homepage "https://github.com/model-checking/cbmc-viewer"
   url "https://github.com/model-checking/cbmc-viewer.git",
-      tag:      "viewer-3.9",
-      revision: "a35eb35fbba72fdd83b5f32dec87836fd5564946"
+      tag:      "viewer-3.10",
+      revision: "234256dbe50d86b0f31640d109e998a3e3fe8d4f"
   license "Apache-2.0"
 
   bottle do
