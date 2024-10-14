@@ -3,14 +3,14 @@ class CbmcViewer < Formula
   desc "Scans the output of CBMC and produces a browsable summary of the results"
   homepage "https://github.com/model-checking/cbmc-viewer"
   url "https://github.com/model-checking/cbmc-viewer.git",
-      tag:      "viewer-3.9",
-      revision: "a35eb35fbba72fdd83b5f32dec87836fd5564946"
+      tag:      "viewer-3.10",
+      revision: "234256dbe50d86b0f31640d109e998a3e3fe8d4f"
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-3.9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "d303de5c4ec434be51c7917c2dcf87e337f23dce88756f0ed583f9e5c8548712"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0c809d7478aa9b1c467a1a9ec835c1542d570ff6245ab6ba1c41bb667eb6e577"
+    root_url "https://github.com/model-checking/cbmc-viewer/releases/download/viewer-3.10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "bbc15a0fb2be79edca3ba43edcdcc4e29fc4982ae7d5c08e9df2a3928d560f9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9cb594b67860fa98330aed99d73280aa8c8b18915154629830448b222234e94d"
   end
 
   depends_on "cbmc" => :test
