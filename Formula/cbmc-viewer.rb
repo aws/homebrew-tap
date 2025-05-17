@@ -59,6 +59,6 @@ class CbmcViewer < Formula
                               "--coverage", "coverage.xml",
                               "--property", "property.xml",
                               "--srcdir", "."
-    assert_predicate testpath/"report/html/index.html", :exist?
+    assert_path_exists testpath/"report/html/index.html"
   end
 end
