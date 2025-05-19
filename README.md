@@ -20,6 +20,7 @@ brew install <FORMULA>
 | [ec2-metadata-mock](https://github.com/aws/amazon-ec2-metadata-mock) | [formula](Formula/ec2-metadata-mock.rb) | A tool to simulate Amazon EC2 instance metadata |
 | [ec2-spot-interrupter](https://github.com/aws/amazon-ec2-spot-interrupter) | [formula](Formula/ec2-spot-interrupter.rb) | CLI tool that triggers Amazon EC2 Spot Interruption Notifications and Rebalance Recommendations |
 | [eks-anywhere](https://github.com/aws/eks-anywhere) | [formula](Formula/eks-anywhere.rb) | CLI tool for managing Amazon EKS Anywhere clusters |
+| [eks-auto-mode-ebs-migration-tool](https://github.com/awslabs/eks-auto-mode-ebs-migration-tool/) | [formula](Formula/eks-auto-mode-ebs-migration-tool.rb) | CLI tool for migrate a Persistent Volume Claim from a standard EBS CSI StorageClass (ebs.csi.aws.com) to the EKS Auto EBS CSI StorageClass (ebs.csi.eks.amazonaws.com) |
 | [eks-node-viewer](https://github.com/awslabs/eks-node-viewer/) | [formula](Formula/eks-node-viewer.rb) | CLI tool for visualizing dynamic node usage within an EKS cluster. |
 | [eksctl](https://github.com/eksctl-io/eksctl) | [formula](Formula/eksctl.rb) | CLI tool for creating and managing EKS clusters |
 | [eksdemo](https://github.com/awslabs/eksdemo) | [formula](Formula/eksdemo.rb) | The easy button for learning, testing and demoing Amazon EKS |

@@ -1,0 +1,13 @@
+{
+    "name": "eks-auto-mode-ebs-migration-tool",
+    "version": "0.3.1",
+    "bin": "eks-auto-mode-ebs-migration-tool",
+    "bottle": {
+        "root_url": "https://github.com/awslabs/eks-auto-mode-ebs-migration-tool/releases/download/v0.3.1/eks-auto-mode-ebs-migration-tool",
+        "sha256": {
+            "sierra": "8a2d115862ee3184dfdaa90c8858f643859b79340221c98b11b6ff332b284773",
+            "linux": "16b430233523113bf864637fdae73100130575bbd003793b29429c8e9aa6133e",
+            "linux_arm": "c4846862046a31014c402c9654f6a9f46c4a85f90ee43180479ca6294dbba951"
+        }
+    }
+}
