@@ -49,17 +49,11 @@ jobs:
           BASE_URL="https://github.com/eksctl-io/eksctl/releases/download/v${VERSION}"
           
           # Download and get SHA256 for each platform
-          curl -sL "${BASE_URL}/eksctl_Darwin_arm64.tar.gz" | sha256sum | cut -d' ' -f1 > darwin_arm64.sha
-          curl -sL "${BASE_URL}/eksctl_Darwin_amd64.tar.gz" | sha256sum | cut -d' ' -f1 > darwin_amd64.sha
-          curl -sL "${BASE_URL}/eksctl_Linux_amd64.tar.gz" | sha256sum | cut -d' ' -f1 > linux_amd64.sha
-          curl -sL "${BASE_URL}/eksctl_Linux_arm64.tar.gz" | sha256sum | cut -d' ' -f1 > linux_arm64.sha
-          curl -sL "${BASE_URL}/eksctl_Linux_armv6.tar.gz" | sha256sum | cut -d' ' -f1 > linux_armv6.sha
-          
-          echo "darwin_arm64=$(cat darwin_arm64.sha)" >> $GITHUB_OUTPUT
-          echo "darwin_amd64=$(cat darwin_amd64.sha)" >> $GITHUB_OUTPUT
-          echo "linux_amd64=$(cat linux_amd64.sha)" >> $GITHUB_OUTPUT
-          echo "linux_arm64=$(cat linux_arm64.sha)" >> $GITHUB_OUTPUT
-          echo "linux_armv6=$(cat linux_armv6.sha)" >> $GITHUB_OUTPUT
+          echo "darwin_arm64=$(curl -sL "${BASE_URL}/eksctl_Darwin_arm64.tar.gz" | sha256sum | cut -d' ' -f1)" >> $GITHUB_OUTPUT
+          echo "darwin_amd64=$(curl -sL "${BASE_URL}/eksctl_Darwin_amd64.tar.gz" | sha256sum | cut -d' ' -f1)" >> $GITHUB_OUTPUT
+          echo "linux_amd64=$(curl -sL "${BASE_URL}/eksctl_Linux_amd64.tar.gz" | sha256sum | cut -d' ' -f1)" >> $GITHUB_OUTPUT
+          echo "linux_arm64=$(curl -sL "${BASE_URL}/eksctl_Linux_arm64.tar.gz" | sha256sum | cut -d' ' -f1)" >> $GITHUB_OUTPUT
+          echo "linux_armv6=$(curl -sL "${BASE_URL}/eksctl_Linux_armv6.tar.gz" | sha256sum | cut -d' ' -f1)" >> $GITHUB_OUTPUT
 
       - name: Update formula
         if: steps.check.outputs.update_needed == 'true'
