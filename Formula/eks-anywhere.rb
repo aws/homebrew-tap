@@ -1,26 +1,26 @@
 class EksAnywhere < Formula
   desc "CLI for managing EKS Anywhere Kubernetes clusters"
   homepage "https://github.com/aws/eks-anywhere"
-  version "0.23.2"
+  version "0.23.3"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/104/artifacts/eks-a/v0.23.2/darwin/arm64/eksctl-anywhere-v0.23.2-darwin-arm64.tar.gz"
-    sha256 "74fdc6c550eb8259b029e86672d35db0f9132f48841d7a3cd65bcee4c8ff861f"
+    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/106/artifacts/eks-a/v0.23.3/darwin/arm64/eksctl-anywhere-v0.23.3-darwin-arm64.tar.gz"
+    sha256 "e9656ee54028e7c63c7d83b3df404ad180572e6ff5d8f12e5ed2bfed45900b16"
   end
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/104/artifacts/eks-a/v0.23.2/darwin/amd64/eksctl-anywhere-v0.23.2-darwin-amd64.tar.gz"
-    sha256 "ec5972f5ab3786b7cf31bfd33f7955eefac03f9a1b0e3c78e20b482718384232"
+    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/106/artifacts/eks-a/v0.23.3/darwin/amd64/eksctl-anywhere-v0.23.3-darwin-amd64.tar.gz"
+    sha256 "c5e61341c4bfb31860b5fdd7f07a4d7182b17052acb1c69e4f7654b8b6190b53"
   end
 
   if OS.linux? && Hardware::CPU.arm?
-    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/104/artifacts/eks-a/v0.23.2/linux/arm64/eksctl-anywhere-v0.23.2-linux-arm64.tar.gz"
-    sha256 "8ab9093300ac50fd99f980695fbf1d5d1a075c4af5b91345310e88c494e7f769"
+    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/106/artifacts/eks-a/v0.23.3/linux/arm64/eksctl-anywhere-v0.23.3-linux-arm64.tar.gz"
+    sha256 "3458337c3fb04025a804d9ef03eb6cda1a81283aa589b3df3d23d6fc1005ef07"
   end
 
   if OS.linux? && Hardware::CPU.intel?
-    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/104/artifacts/eks-a/v0.23.2/linux/amd64/eksctl-anywhere-v0.23.2-linux-amd64.tar.gz"
-    sha256 "342cdee5537f12630804055510409a54fb82acd8a998d853c80e93cf3888bd26"
+    url "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/106/artifacts/eks-a/v0.23.3/linux/amd64/eksctl-anywhere-v0.23.3-linux-amd64.tar.gz"
+    sha256 "0e183c4929cf543c73fe6ca0680f755df9f5c0110fdde62c8bb7313d30b01b73"
   end
 
   depends_on "eksctl"
