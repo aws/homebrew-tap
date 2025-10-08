@@ -1,7 +1,7 @@
 {
-    "version": "1.0.6",
-    "url": "https://github.com/aws/lightsailctl/archive/v1.0.6.tar.gz",
-    "sha256": "f967a4059833945418366284e8a3393518d21d636165182691d7bbf2f01cea1c",
+    "version": "1.0.7",
+    "url": "https://github.com/aws/lightsailctl/archive/v1.0.7.tar.gz",
+    "sha256": "b01945c7a47a2fee3c6545f3536c6ba7b62ba3afc6842c41d514237936ba891f",
     "name": "lightsailctl",
     "bin": "lightsailctl"
 }
