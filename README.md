@@ -32,6 +32,7 @@ brew install <FORMULA>
 | [emr-on-eks-custom-image](https://github.com/awslabs/amazon-emr-on-eks-custom-image-cli) | [formula](Formula/emr-on-eks-custom-image.rb) | A CLI tool to interact with EMR on EKS custom images.
 | [cbmc-viewer](https://github.com/awslabs/aws-viewer-for-cbmc) | [formula](Formula/cbmc-viewer.rb) | CBMC Viewer scans the output of CBMC and produces a summary that can be opened in any web browser to understand and debug CBMC findings.
 | [dynamodb-shell](https://github.com/awslabs/dynamodb-shell) | [formula](Formula/aws-ddbsh.rb) | A simple SQL CLI for DynamoDB
+| [codecatalyst-runner-cli](https://github.com/aws/codecatalyst-runner-cli) | [formula](Formula/codecatalyst-runner-cli.rb) | CLI to run CodeCatalyst workflows locally
 
 ## Migrated Formulae's
 | Repository | Migrated Tap | Formula | Description |
