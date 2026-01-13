@@ -3,7 +3,7 @@ cask "ec2-spot-interrupter" do
   name "ec2-spot-interrupter"
   desc "A simple CLI tool that triggers Amazon EC2 Spot Interruption Notifications and Rebalance Recommendations."
   homepage "https://github.com/aws/amazon-ec2-spot-interrupter"
-  version "0.0.15"
+  version "0.0.16"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "ec2-spot-interrupter" do
   on_macos do
     on_intel do
       url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v#{version}/ec2-spot-interrupter_darwin_amd64.tar.gz"
-      sha256 "de7537fab15a9bf7ef339a8eca279796a5874046a70f7394975ae82ba80a7058"
+      sha256 "867d1ea0c4e64638e54d9b4b91809f689d7a0378b0e3743c87a0a483c7697b98"
     end
     on_arm do
       url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v#{version}/ec2-spot-interrupter_darwin_arm64.tar.gz"
-      sha256 "581b6f03bfe0066de189f7ce294b8bb503bb44f0a405740970ab25d903f34e7a"
+      sha256 "d42f4e93d25d1bfabe918c4e4ff0478422f702ce6e8cda74a7acaeb33204a8ce"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v#{version}/ec2-spot-interrupter_linux_amd64.tar.gz"
-      sha256 "05bf53cdabe89a0149c1ceb3f456ee9f6706fdf5c9789dcaa0ce3d839b254d0b"
+      sha256 "7a504350e186d4803899c2dfd3cb0a25cd2bd2ec48cacfee3b6791c76bbc6e1d"
     end
     on_arm do
       url "https://github.com/aws/amazon-ec2-spot-interrupter/releases/download/v#{version}/ec2-spot-interrupter_linux_arm64.tar.gz"
-      sha256 "2465c653facb2d508a5fae7582acc5b7ffd3276acb4ca62532cd7053595b25c5"
+      sha256 "542fed49faf445bce7b5a40822f7ecdf6ee38faf8af9e37767b4831e124595d0"
     end
   end
 
