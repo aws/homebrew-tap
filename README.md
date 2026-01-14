@@ -37,7 +37,7 @@ brew install <FORMULA>
 ## Migrated Formulae's
 | Repository | Migrated Tap | Formula | Description |
 | ---------- | ------------ | ------- | ----------- |
-| [aws-sam-cli](https://github.com/awslabs/aws-sam-cli) | `homebrew/core` | [formula](https://github.com/Homebrew/homebrew-core/blob/master/Formula/a/aws-sam-cli.rb) | CLI tool to build, test, debug, and deploy Serverless applications using AWS Lambda |
+| [aws-sam-cli](https://github.com/awslabs/aws-sam-cli) | `homebrew/core` | [formula](https://github.com/Homebrew/homebrew-core/blob/master/Formula/a/aws-sam-cli.rb) | CLI tool to build, test, debug, and deploy Serverless applications using AWS Lambda. NOTE: It is no longer recommended to use homebrew to install the aws-sam-cli, instead use the installation instructions [here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html) |
 | [smithy-cli](https://github.com/awslabs/smithy) | `smithy-lang/tap` |  [formula](https://github.com/smithy-lang/homebrew-tap/blob/main/Formula/smithy-cli.rb) | A CLI for building, validating, querying, and iterating on Smithy models
 
 
