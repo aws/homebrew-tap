@@ -1,5 +1,6 @@
 class CbmcViewer < Formula
   include Language::Python::Virtualenv
+
   desc "Scans the output of CBMC and produces a browsable summary of the results"
   homepage "https://github.com/model-checking/cbmc-viewer"
   url "https://github.com/model-checking/cbmc-viewer.git",
